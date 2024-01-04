@@ -13,7 +13,9 @@ const StyledProductsSection = styled.section`
 `;
 
 function ProductsSection() {
-  return <StyledProductsSection>Products</StyledProductsSection>;
+  return (
+    <StyledProductsSection id="productsSection">Products</StyledProductsSection>
+  );
 }
 
 export default ProductsSection;

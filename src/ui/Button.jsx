@@ -23,11 +23,11 @@ const sizes = {
 const variations = {
   primary: css`
     color: var(--color-brand-50);
-    background-color: var(--btn-primary-color);
+    background-color: var(--color-primary);
 
     &:hover {
       background-color: rgba(0, 0, 0, 0);
-      border: 1px solid var(--btn-primary-color);
+      border: 1px solid var(--color-primary);
     }
   `,
   secondary: css`
@@ -44,14 +44,14 @@ const variations = {
     background-color: rgba(0, 0, 0, 0);
 
     &:hover {
-      background-color: var(--btn-primary-color);
-      border: 1px solid var(--btn-primary-color);
+      background-color: var(--color-primary);
+      border: 1px solid var(--color-primary);
     }
   `,
 };
 
 const Button = styled.button`
-  border: 1px solid var(--btn-primary-color);
+  border: 1px solid var(--color-primary);
   border-radius: 100px;
   box-shadow: var(--shadow-sm);
 

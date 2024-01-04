@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledBenefitsSection = styled.section`
   height: 60vh;
-  background-color: black;
+  background-color: #1c1c1c;
   border-bottom: 1px solid #fff;
 
   display: flex;
@@ -13,7 +13,9 @@ const StyledBenefitsSection = styled.section`
 `;
 
 function BenefitsSection() {
-  return <StyledBenefitsSection>Benefits</StyledBenefitsSection>;
+  return (
+    <StyledBenefitsSection id="benefitsSection">Benefits</StyledBenefitsSection>
+  );
 }
 
 export default BenefitsSection;

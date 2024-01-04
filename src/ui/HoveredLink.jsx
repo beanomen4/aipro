@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Span = styled.span`
   position: relative;
   text-decoration: none;
+  cursor: pointer;
 
   &:before {
     content: "";
@@ -11,7 +12,7 @@ const Span = styled.span`
     bottom: -5px;
     width: 0;
     height: 1.5px;
-    background-color: var(--btn-primary-color);
+    background-color: var(--color-primary);
   }
 
   &:hover:before {

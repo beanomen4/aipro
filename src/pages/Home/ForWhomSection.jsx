@@ -13,7 +13,9 @@ const StyledForWhomSection = styled.section`
 `;
 
 function ForWhomSection() {
-  return <StyledForWhomSection>For whom</StyledForWhomSection>;
+  return (
+    <StyledForWhomSection id="forWhomSection">For whom</StyledForWhomSection>
+  );
 }
 
 export default ForWhomSection;

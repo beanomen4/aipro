@@ -13,7 +13,11 @@ const StyledQuestionsSection = styled.section`
 `;
 
 function QuestionsSection() {
-  return <StyledQuestionsSection>Questions</StyledQuestionsSection>;
+  return (
+    <StyledQuestionsSection id="questionsSection">
+      Questions
+    </StyledQuestionsSection>
+  );
 }
 
 export default QuestionsSection;

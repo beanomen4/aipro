@@ -18,7 +18,8 @@ const GlobalStyles = createGlobalStyle`
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
 
     // figma
-    --btn-primary-color: #24A1DF;
+    --color-primary: #24A1DF;
+    --color-instruction-bg: #1E303A;
   }
 
   *,
