@@ -1,19 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import Heading from "./Heading";
+import Button from "../../ui/Button";
 import productIcon from "/src/assets/instruction/product.svg";
 import signintIcon from "/src/assets/instruction/signin.svg";
 import customizeIcon from "/src/assets/instruction/configure.svg";
 import usingIcon from "/src/assets/instruction/using.svg";
-import Button from "../../ui/Button";
-import { useNavigate } from "react-router-dom";
 
 const StyledHowSection = styled.section`
-  height: 60vh;
+  height: 80vh;
   background-color: #1c1c1c;
   border-bottom: 1px solid #fff;
-
-  color: #fff;
 
   display: flex;
   flex-direction: column;
@@ -21,7 +19,7 @@ const StyledHowSection = styled.section`
 
   & button {
     width: 20rem;
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
 `;
 

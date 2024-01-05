@@ -1,20 +1,25 @@
 import styled from "styled-components";
 
+import Heading from "./Heading";
+import CentralSlider from "./CentralSlider";
+
 const StyledBenefitsSection = styled.section`
-  height: 60vh;
+  overflow: hidden;
+  height: 70vh;
   background-color: #1c1c1c;
   border-bottom: 1px solid #fff;
 
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-
-  color: #fff;
 `;
 
 function BenefitsSection() {
   return (
-    <StyledBenefitsSection id="benefitsSection">Benefits</StyledBenefitsSection>
+    <StyledBenefitsSection id="benefitsSection">
+      <Heading boldText="Aipro">Benefits</Heading>
+      <CentralSlider />
+    </StyledBenefitsSection>
   );
 }
 
