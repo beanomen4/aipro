@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Heading from "./Heading";
 import Button from "../../ui/Button";
+
 import productIcon from "/src/assets/instruction/product.svg";
 import signintIcon from "/src/assets/instruction/signin.svg";
 import customizeIcon from "/src/assets/instruction/configure.svg";
