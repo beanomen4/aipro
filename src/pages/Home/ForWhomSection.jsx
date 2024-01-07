@@ -14,7 +14,6 @@ import specializedIcon from "/src/assets/services/specialized.svg";
 
 const StyledForWhomSection = styled.section`
   height: 100vh;
-  border-bottom: 1px solid #fff;
   background: no-repeat 0% 50%/100% url("/forWhom-bg.jpg");
 
   display: flex;

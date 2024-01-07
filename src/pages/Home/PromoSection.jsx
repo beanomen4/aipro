@@ -10,7 +10,6 @@ const StyledPromoSection = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 0 10%;
-  border-bottom: 1px solid #fff;
   background: no-repeat 0% 50%/100% url("/promo-bg.jpg");
   color: #fff;
 `;

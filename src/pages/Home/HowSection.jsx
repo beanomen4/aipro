@@ -12,7 +12,6 @@ import usingIcon from "/src/assets/instruction/using.svg";
 const StyledHowSection = styled.section`
   height: 80vh;
   background-color: #1c1c1c;
-  border-bottom: 1px solid #fff;
 
   display: flex;
   flex-direction: column;

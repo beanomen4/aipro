@@ -8,9 +8,8 @@ import sectionImg from "/src/assets/questions/section-img.png";
 
 const StyledQuestionsSection = styled.section`
   position: relative;
-  border-bottom: 1px solid #fff;
   background-color: #1c1c1c;
-  /* background: no-repeat 0% 50%/70% url("/questions-bg.jpg"); */
+  padding-bottom: 4rem;
 
   display: flex;
   flex-direction: column;

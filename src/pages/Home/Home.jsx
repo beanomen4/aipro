@@ -4,6 +4,7 @@ import BenefitsSection from "./BenefitsSection";
 import ForWhomSection from "./ForWhomSection";
 import ProductsSection from "./ProductsSection";
 import QuestionsSection from "./QuestionsSection";
+import Footer from "./Footer";
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
       <ForWhomSection />
       <ProductsSection />
       <QuestionsSection />
+      <Footer />
     </>
   );
 }

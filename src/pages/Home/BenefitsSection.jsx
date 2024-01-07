@@ -7,7 +7,6 @@ const StyledBenefitsSection = styled.section`
   overflow: hidden;
   height: 70vh;
   background-color: #1c1c1c;
-  border-bottom: 1px solid #fff;
 
   display: flex;
   flex-direction: column;

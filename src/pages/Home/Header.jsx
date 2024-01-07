@@ -6,7 +6,7 @@ import Button from "../../ui/Button";
 import HoveredLink from "../../ui/HoveredLink";
 
 const StyledHeader = styled.header`
-  width: 90%;
+  width: ${(props) => `${props.width || "90%"}`};
   height: 7rem;
   position: absolute;
   top: 0;
@@ -19,7 +19,6 @@ const StyledHeader = styled.header`
 const ImgContainer = styled.div`
   height: 5rem;
   justify-self: center;
-  /* align-self: center; */
   cursor: pointer;
 `;
 
@@ -30,11 +29,11 @@ const Nav = styled.ul`
   gap: 5rem;
 `;
 
-function Header() {
+function Header({ width }) {
   const navigate = useNavigate();
 
   return (
-    <StyledHeader>
+    <StyledHeader width={width}>
       <ImgContainer>
         <Link to="promoSection" smooth={true} offset={-50} duration={700}>
           <img src="/logo-nav.png" alt="Logo AiPro" />

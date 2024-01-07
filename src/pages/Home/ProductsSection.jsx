@@ -6,7 +6,6 @@ import productImg from "/src/assets/products/product-img.png";
 
 const StyledProductsSection = styled.section`
   height: 100vh;
-  border-bottom: 1px solid #fff;
   background: no-repeat 0% 50%/100% url("/products-bg.jpg");
 
   display: flex;
