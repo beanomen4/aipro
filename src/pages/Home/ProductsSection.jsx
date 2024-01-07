@@ -34,6 +34,7 @@ function ProductsSection() {
   return (
     <StyledProductsSection id="productsSection">
       <Heading boldText="Products">Our</Heading>
+      
       <StyledSectionContent>
         <ProductCard />
         <SectionImg>
