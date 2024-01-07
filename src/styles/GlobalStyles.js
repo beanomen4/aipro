@@ -34,6 +34,14 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 62.5%;
+    background: #1c1c1c;
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 1024px) {
+    html {
+      font-size: 50%;
+    }
   }
 
   body {

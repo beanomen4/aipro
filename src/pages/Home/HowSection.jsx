@@ -21,6 +21,19 @@ const StyledHowSection = styled.section`
     width: 20rem;
     margin-top: 4rem;
   }
+
+  @media (max-width: 1024px) {
+    height: 35vh;
+  }
+
+  @media (max-width: 780px) {
+    min-height: 40vh;
+  }
+
+  @media (max-width: 560px) {
+    height: auto;
+    padding-bottom: 5rem;
+  }
 `;
 
 const Boxes = styled.div`
@@ -29,6 +42,17 @@ const Boxes = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+
+  @media (max-width: 780px) {
+    width: 90%;
+  }
+
+  @media (max-width: 560px) {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
 `;
 
 const Box = styled.div`
@@ -40,6 +64,16 @@ const Box = styled.div`
   align-items: center;
   border-radius: 15px;
   background-color: var(--color-instruction-bg);
+
+  @media (max-width: 920px) {
+    width: 18rem;
+    height: 20rem;
+  }
+
+  @media (max-width: 560px) {
+    width: 25rem;
+    height: 20rem;
+  }
 `;
 
 const BoxStep = styled.span`
@@ -50,6 +84,14 @@ const BoxStep = styled.span`
   font-size: 4rem;
   font-weight: 600;
   line-height: 1;
+
+  @media (max-width: 920px) {
+    font-size: 2.8rem;
+  }
+
+  @media (max-width: 560px) {
+    font-size: 3.2rem;
+  }
 `;
 
 const ImgContainer = styled.div`
@@ -65,6 +107,15 @@ const ImgContainer = styled.div`
   & img {
     width: 3.5rem;
   }
+
+  @media (max-width: 920px) {
+    width: 5rem;
+    height: 5rem;
+
+    & img {
+      width: 2.5rem;
+    }
+  }
 `;
 
 const BoxHeading = styled.span`
@@ -73,6 +124,11 @@ const BoxHeading = styled.span`
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 1;
+
+  @media (max-width: 560px) {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+  }
 `;
 
 const BoxDescription = styled.span`
@@ -83,6 +139,11 @@ const BoxDescription = styled.span`
   font-weight: 300;
   line-height: 1.6;
   text-align: center;
+
+  @media (max-width: 560px) {
+    padding: 0 1rem;
+    font-weight: 400;
+  }
 `;
 
 function HowSection() {

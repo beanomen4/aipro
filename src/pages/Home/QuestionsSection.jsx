@@ -62,10 +62,15 @@ const TabTextContent = styled.div`
 const TabHeading = styled.h4`
   color: #fff;
   font-size: 2.2rem;
+
+  @media (max-width: 560px) {
+    font-size: 2rem;
+    font-weight: 400;
+  }
 `;
 
 const TabDescription = styled.p`
-  width: 95%;
+  width: 100%;
   margin-top: 2rem;
   color: var(--color-grey-200);
   font-size: 1.6rem;

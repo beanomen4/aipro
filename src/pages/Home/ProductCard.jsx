@@ -18,6 +18,11 @@ const CardTabs = styled.div`
 
   display: flex;
   justify-content: space-around;
+
+  @media (max-width: 560px) {
+    width: 45rem;
+    margin-bottom: 2rem;
+  }
 `;
 
 const MonthTabs = styled.ul`
@@ -42,6 +47,11 @@ const MonthTab = styled.li`
 
   &:hover {
     color: #fff;
+  }
+
+  @media (max-width: 560px) {
+    width: 8rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -69,7 +79,8 @@ const PriceTab = styled.select`
 
 const Card = styled.div`
   width: 35rem;
-  height: 38rem;
+  padding-bottom: 1rem;
+  height: 42rem;
   position: relative;
 
   border-radius: 20px;
@@ -153,8 +164,12 @@ const WorkersCount = styled.div`
 `;
 
 const Divider = styled.div`
-  margin: 1.25rem 0 0.75rem 0;
+  margin: 3.5rem 0 0.75rem 0;
   border-bottom: 1px solid #5d637b;
+
+  @media (max-width: 1024px) {
+    margin: 3.5rem 0 2rem 0;
+  }
 `;
 
 const CardFooter = styled.footer`
@@ -166,7 +181,7 @@ const CardFooter = styled.footer`
 
 const CardBackInfo = styled.div`
   width: 35rem;
-  height: 38rem;
+  height: 42rem;
 
   border-radius: 20px;
   background: linear-gradient(195deg, #416076 2.78%, #3a4360 71.89%);
@@ -176,7 +191,7 @@ const CardBackInfo = styled.div`
 const CardHeadingBack = styled.h3`
   margin: 1rem 0;
   color: var(--color-grey-200);
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: 500;
   line-height: 1.2;
 `;
@@ -184,8 +199,8 @@ const CardHeadingBack = styled.h3`
 const CardSubHeadingBack = styled.p`
   margin-bottom: 1rem;
   padding: 0 2rem;
-  color: #fff;
-  font-size: 0.8rem;
+  color: #bcc4d2;
+  font-size: 1rem;
   font-weight: 500;
 `;
 

@@ -5,18 +5,30 @@ import Header from "./Header";
 import Button from "../../ui/Button";
 
 const StyledPromoSection = styled.section`
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 0 10%;
   background: no-repeat 0% 50%/100% url("/promo-bg.jpg");
   color: #fff;
+
+  @media (max-width: 1024px) {
+    min-height: 50vh;
+  }
+
+  @media (max-width: 780px) {
+    padding: 0 5%;
+  }
+
+  @media (max-width: 560px) {
+    background: #1c1c1c;
+  }
 `;
 
-const Box = styled.div`
+const SectionContent = styled.div`
   width: 90%;
-  padding: 25% 3% 0 3%;
+  margin-top: 15rem;
   color: var(--color-grey-200);
   text-align: left;
 
@@ -24,13 +36,52 @@ const Box = styled.div`
     props.position === "left" &&
     css`
       text-align: left;
+
+      @media (max-width: 560px) {
+        grid-column: 1/-1;
+        justify-self: center;
+      }
     `}
 
   ${(props) =>
     props.position === "right" &&
     css`
       justify-self: right;
+
+      @media (max-width: 560px) {
+        grid-column: 1/-1;
+        justify-self: center;
+        align-self: start;
+      }
     `}
+
+  @media (min-width: 1360px) {
+    margin-top: 25rem;
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 25rem;
+  }
+
+  @media (max-width: 920px) {
+    margin-top: 20rem;
+  }
+
+  @media (max-width: 780px) {
+    width: 95%;
+  }
+
+  @media (max-width: 560px) {
+    width: 65%;
+    margin-top: 15rem;
+    text-align: center;
+
+    img {
+      width: 60%;
+      margin-top: -7.5rem;
+      margin-bottom: 5rem;
+    }
+  }
 `;
 
 const H1 = styled.h1`
@@ -38,6 +89,15 @@ const H1 = styled.h1`
   font-weight: 400;
   line-height: 1;
   text-transform: uppercase;
+
+  @media (max-width: 780px) {
+    font-size: 10rem;
+  }
+
+  @media (max-width: 560px) {
+    padding-bottom: 2rem;
+    font-size: 8rem;
+  }
 `;
 
 const P = styled.p`
@@ -45,6 +105,14 @@ const P = styled.p`
   font-size: 2.8rem;
   font-weight: 300;
   line-height: 1.3;
+
+  @media (max-width: 780px) {
+    font-size: 2.2rem;
+  }
+
+  @media (max-width: 560px) {
+    font-size: 2rem;
+  }
 `;
 
 const Span = styled.span`
@@ -52,6 +120,11 @@ const Span = styled.span`
   margin-bottom: 1rem;
   font-size: 1.6rem;
   font-weight: 100;
+
+  @media (max-width: 560px) {
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+  }
 `;
 
 function PromoSection() {
@@ -59,8 +132,9 @@ function PromoSection() {
 
   return (
     <StyledPromoSection id="promoSection">
-      <Header />
-      <Box position="left">
+      <Header top="1rem" />
+
+      <SectionContent position="left">
         <H1>AIPRO</H1>
         <P>
           Revolution in task automation: Our programs for efficient operations
@@ -72,10 +146,10 @@ function PromoSection() {
         <Button size="large" onClick={() => navigate("/signup")}>
           Get started
         </Button>
-      </Box>
-      <Box position="right">
+      </SectionContent>
+      <SectionContent position="right">
         <img src="/promo-img.png" alt="Promo icon" />
-      </Box>
+      </SectionContent>
     </StyledPromoSection>
   );
 }

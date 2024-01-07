@@ -9,6 +9,11 @@ const StyledHeading = styled.h2`
   line-height: 1;
   text-transform: uppercase;
   text-align: center;
+
+  @media (max-width: 560px) {
+    font-size: 4rem;
+    line-height: 1.4;
+  }
 `;
 
 const BoldText = styled.span`

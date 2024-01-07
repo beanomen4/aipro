@@ -19,6 +19,19 @@ const StyledForWhomSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    height: 45vh;
+  }
+
+  @media (max-width: 780px) {
+    min-height: 60vh;
+  }
+
+  @media (max-width: 560px) {
+    height: auto;
+    padding-bottom: 5rem;
+  }
 `;
 
 const StyledSectionContent = styled.div`
@@ -28,6 +41,18 @@ const StyledSectionContent = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, 1fr);
+
+  @media (max-width: 780px) {
+    width: 90%;
+  }
+
+  @media (max-width: 560px) {
+    width: 60%;
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    row-gap: 5rem;
+  }
 `;
 
 const SectionImage = styled.div`
@@ -43,6 +68,10 @@ const SectionImage = styled.div`
     width: 80%;
     transform: translateX(2rem);
   }
+
+  @media (max-width: 560px) {
+    display: none;
+  }
 `;
 
 const StyledItem = styled.div`
@@ -54,9 +83,17 @@ const StyledItem = styled.div`
   display: flex;
   align-items: center;
   gap: 2rem;
+
+  @media (max-width: 560px) {
+    /* grid-column: 1/span 2; */
+    /* grid-row: auto/auto; */
+    grid-column: auto;
+    grid-row: auto;
+  }
 `;
 
 const ItemImg = styled.div`
+  flex-shrink: 0;
   width: 8rem;
   height: 8rem;
 
@@ -70,6 +107,15 @@ const ItemImg = styled.div`
 
   img {
     width: 4rem;
+  }
+
+  @media (max-width: 920px) {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  img {
+    width: 3rem;
   }
 `;
 
