@@ -19,6 +19,7 @@ const GlobalStyles = createGlobalStyle`
 
     // figma
     --color-primary: #24A1DF;
+    --color-secondary: #f98b25;
     --color-instruction-bg: #1E303A;
   }
 

@@ -47,8 +47,8 @@ const SectionImage = styled.div`
 `;
 
 const StyledItem = styled.div`
-  grid-column: ${(props) => `${props.gCol || "1/1"}`};
-  grid-row: ${(props) => `${props.gRow || "1/1"}`};
+  grid-column: ${(props) => `${props.gcol || "1/1"}`};
+  grid-row: ${(props) => `${props.grow || "1/1"}`};
 
   width: 100%;
   height: 100%;
@@ -128,7 +128,7 @@ function ForWhomSection() {
             </ItemList>
           </ItemContent>
         </StyledItem>
-        <StyledItem gCol="3/-1">
+        <StyledItem gcol="3/-1">
           <ItemImg>
             <img src={educationIcon} alt="Education icon" />
           </ItemImg>
@@ -140,7 +140,7 @@ function ForWhomSection() {
             </ItemList>
           </ItemContent>
         </StyledItem>
-        <StyledItem gRow="3/4">
+        <StyledItem grow="3/4">
           <ItemImg>
             <img src={supportIcon} alt="Support icon" />
           </ItemImg>
@@ -152,7 +152,7 @@ function ForWhomSection() {
             </ItemList>
           </ItemContent>
         </StyledItem>
-        <StyledItem gCol="3/-1" gRow="3/4">
+        <StyledItem gcol="3/-1" grow="3/4">
           <ItemImg>
             <img src={contentIcon} alt="Content icon" />
           </ItemImg>
@@ -164,7 +164,7 @@ function ForWhomSection() {
             </ItemList>
           </ItemContent>
         </StyledItem>
-        <StyledItem gRow="5/-1">
+        <StyledItem grow="5/-1">
           <ItemImg>
             <img src={freelancersIcon} alt="Freelancers icon" />
           </ItemImg>
@@ -172,13 +172,11 @@ function ForWhomSection() {
             <ItemHeading>Freelancers</ItemHeading>
             <ItemList>
               <ItemLi>Self-Employed Individuals</ItemLi>
-              <ItemLi>
-                People with Individual Entrepreneurial Activity (IEA)
-              </ItemLi>
+              <ItemLi>Individual Entrepreneurial Activity</ItemLi>
             </ItemList>
           </ItemContent>
         </StyledItem>
-        <StyledItem gCol="3/4" gRow="5/-1">
+        <StyledItem gcol="3/4" grow="5/-1">
           <ItemImg>
             <img src={specializedIcon} alt="Specialized icon" />
           </ItemImg>
