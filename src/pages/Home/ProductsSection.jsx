@@ -62,7 +62,9 @@ const SectionImg = styled.div`
 function ProductsSection() {
   return (
     <StyledProductsSection id="productsSection">
-      <Heading boldText="Products">Our</Heading>
+      <Heading boldText="Products" padding="4rem 0 2rem 0">
+        Our
+      </Heading>
 
       <StyledSectionContent>
         <ProductCard />

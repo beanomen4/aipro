@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 const StyledHeading = styled.h2`
+  padding: ${(props) => `${props.padding || "4rem 0 6.5rem 0"}`};
+
   display: block;
-  padding: 4rem 0 6.5rem 0;
   color: var(--color-grey-0);
   font-size: 5.2rem;
   font-weight: 400;
@@ -21,9 +22,9 @@ const BoldText = styled.span`
   font-weight: 700;
 `;
 
-function Heading({ boldText, children }) {
+function Heading({ boldText, padding, children }) {
   return (
-    <StyledHeading>
+    <StyledHeading padding={padding}>
       {children} <BoldText>{boldText}</BoldText>
     </StyledHeading>
   );

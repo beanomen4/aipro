@@ -37,7 +37,7 @@ const StyledHowSection = styled.section`
 `;
 
 const Boxes = styled.div`
-  width: 78%;
+  width: 85%;
   height: 20rem;
   display: flex;
   justify-content: space-between;
@@ -56,7 +56,7 @@ const Boxes = styled.div`
 `;
 
 const Box = styled.div`
-  width: 22rem;
+  width: 25rem;
   height: 100%;
   position: relative;
   display: flex;
@@ -133,7 +133,7 @@ const BoxHeading = styled.span`
 
 const BoxDescription = styled.span`
   display: inline-block;
-  padding: 0 0.75rem;
+  padding: 0 1.75rem;
   color: var(--color-grey-200);
   font-size: 1.4rem;
   font-weight: 300;

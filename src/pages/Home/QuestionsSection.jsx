@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import Heading from "./Heading";
 import plusIcon from "/src/assets/questions/plus.svg";
@@ -35,6 +35,26 @@ const QuestionTab = styled.div`
   border-radius: 10px;
   background: #1e303a;
   cursor: pointer;
+
+  &:hover {
+    background: #2c4657;
+  }
+`;
+
+const fadeInOut = keyframes`
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+const AnimatedQuestionTab = styled(QuestionTab)`
+  animation: ${(props) => (props.isOpen ? fadeInOut : "none")} 0.7s ease-in-out;
 `;
 
 const TabIcon = styled.div`
@@ -144,7 +164,7 @@ function AccordionItem({ num, title, curOpen, onOpen, children }) {
   }
 
   return (
-    <QuestionTab onClick={handleToggle}>
+    <AnimatedQuestionTab onClick={handleToggle} isOpen={isOpen}>
       <TabIcon>
         <img src={isOpen ? minusIcon : plusIcon} alt="Tab icon" />
       </TabIcon>
@@ -152,7 +172,7 @@ function AccordionItem({ num, title, curOpen, onOpen, children }) {
         <TabHeading>{title}</TabHeading>
         {isOpen ? <TabDescription>{children}</TabDescription> : null}
       </TabTextContent>
-    </QuestionTab>
+    </AnimatedQuestionTab>
   );
 }
 

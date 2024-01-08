@@ -5,11 +5,10 @@ import Button from "../../ui/Button";
 import checkmarkIcon from "/src/assets/products/checkmark.svg";
 
 const CardContainer = styled.div`
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
 `;
 
 const CardTabs = styled.div`
@@ -20,7 +19,7 @@ const CardTabs = styled.div`
   justify-content: space-around;
 
   @media (max-width: 560px) {
-    width: 45rem;
+    width: 40rem;
     margin-bottom: 2rem;
   }
 `;
@@ -50,37 +49,55 @@ const MonthTab = styled.li`
   }
 
   @media (max-width: 560px) {
-    width: 8rem;
-    font-size: 1.2rem;
+    width: 6.5rem;
+    font-size: 1rem;
   }
 `;
 
-const PriceTab = styled.select`
-  width: 10rem;
-  border: none;
-  border-radius: 100px;
-  background: #415e74;
-  color: #fff;
-  font-weight: 500;
-  outline: none !important;
+const PriceTab = styled.div`
+  position: relative;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  &:after {
+    content: "↓";
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 1.75rem;
+    transform: translateY(-50%);
+  }
 
-  padding-left: 1.5rem;
-
-  option {
+  select {
     width: 10rem;
-    height: 4rem;
-    background-color: red;
+    height: 100%;
+    position: relative;
+    border: none;
+    border-radius: 100px;
+    background: #415e74;
+    color: #fff;
+    font-weight: 500;
+    outline: none !important;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1.75rem;
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    option {
+      width: 10rem;
+      height: 4rem;
+    }
   }
 `;
 
 const Card = styled.div`
-  width: 35rem;
+  width: 37.5rem;
+  height: 45rem;
   padding-bottom: 1rem;
-  height: 42rem;
   position: relative;
 
   border-radius: 20px;
@@ -101,7 +118,7 @@ const Discount = styled.div`
 `;
 
 const CardHeading = styled.h3`
-  margin: 3rem 0 1rem 0;
+  margin: 3rem 0 2rem 0;
   color: var(--color-grey-200);
   font-size: 2.8rem;
   font-weight: 500;
@@ -109,13 +126,13 @@ const CardHeading = styled.h3`
 `;
 
 const CardSubHeading = styled.p`
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   color: #bcc4d2;
   font-size: 1.2rem;
 `;
 
 const MonthPrice = styled.p`
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   color: #fff;
   font-size: 2.4rem;
   font-weight: 100;
@@ -131,7 +148,7 @@ const MonthPrice = styled.p`
 `;
 
 const MonthInfo = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: #bcc4d2;
   font-size: 1.4rem;
 
@@ -146,7 +163,7 @@ const MonthInfo = styled.div`
 `;
 
 const WorkersCount = styled.div`
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   color: #bcc4d2;
   font-weight: 300;
 
@@ -180,8 +197,8 @@ const CardFooter = styled.footer`
 `;
 
 const CardBackInfo = styled.div`
-  width: 35rem;
-  height: 42rem;
+  width: 37.5rem;
+  height: 45rem;
 
   border-radius: 20px;
   background: linear-gradient(195deg, #416076 2.78%, #3a4360 71.89%);
@@ -200,7 +217,7 @@ const CardSubHeadingBack = styled.p`
   margin-bottom: 1rem;
   padding: 0 2rem;
   color: #bcc4d2;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
 `;
 
@@ -223,7 +240,7 @@ const TableHeader = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   /* margin-bottom: 0.5rem;  */
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 500;
   border-bottom: 1px solid #fff;
 
@@ -231,7 +248,7 @@ const TableHeader = styled.div`
     padding: 0 1rem;
     border-radius: 20px 20px 0px 0px;
     background: rgba(12, 69, 92, 0.92);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -240,11 +257,11 @@ const TableRow = styled.div`
   justify-content: space-between;
   padding-top: 0.3rem;
   border-bottom: 1px solid #bcc4d2;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   text-align: left;
 
   img {
-    padding: 0 3.45rem;
+    padding: 0 3.75rem;
     background: rgba(12, 69, 92, 0.92);
   }
 `;
@@ -275,11 +292,13 @@ function ProductCard() {
           value={currency}
           onChange={(e) => setCurrency(e.target.value)}
         >
-          {currencies.map((curr) => (
-            <option value={curr} key={curr}>
-              {curr}
-            </option>
-          ))}
+          <select>
+            {currencies.map((curr) => (
+              <option value={curr} key={curr}>
+                {curr}
+              </option>
+            ))}
+          </select>
         </PriceTab>
       </CardTabs>
 

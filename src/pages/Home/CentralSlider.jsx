@@ -5,6 +5,8 @@ import capabilitiesIcon from "/src/assets/slider/capabilities.svg";
 import efficiencyIcon from "/src/assets/slider/efficiency.svg";
 import guaranteeIcon from "/src/assets/slider/guarantee.svg";
 import adaptationIcon from "/src/assets/slider/adaptation.svg";
+import arrowLeftIcon from "/src/assets/slider/arrowLeft.svg";
+import arrowRightIcon from "/src/assets/slider/arrowRight.png";
 
 const StyledSlider = styled.div`
   width: 130%;
@@ -18,16 +20,12 @@ const StyledSlider = styled.div`
     height: 5rem;
     margin-right: 30rem;
     border-radius: 10px;
-    background: #24a1df;
+    background: center/250% url(${arrowLeftIcon});
     box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.21);
     z-index: 10;
 
     &:before {
-      content: "˲";
-      position: relative;
-      top: -2.15rem;
-      left: 0.15rem;
-      font-size: 6rem;
+      content: "";
     }
   }
 
@@ -36,16 +34,12 @@ const StyledSlider = styled.div`
     height: 5rem;
     margin-left: 30rem;
     border-radius: 10px;
-    background: #24a1df;
+    background: center/250% url(${arrowRightIcon});
     box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.21);
     z-index: 10;
 
     &:before {
-      content: "˱";
-      position: relative;
-      top: -2.15rem;
-      right: 0.15rem;
-      font-size: 6rem;
+      content: "";
     }
   }
 
@@ -57,11 +51,11 @@ const StyledSlider = styled.div`
     width: 200%;
 
     .slick-arrow.slick-next {
-      margin-right: 33rem;
+      margin-right: 30rem;
     }
 
     .slick-arrow.slick-prev {
-      margin-left: 33rem;
+      margin-left: 30rem;
     }
   }
 `;

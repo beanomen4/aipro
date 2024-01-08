@@ -47,6 +47,7 @@ const SectionContent = styled.div`
     props.position === "right" &&
     css`
       justify-self: right;
+      margin-top: 7rem;
 
       @media (max-width: 560px) {
         grid-column: 1/-1;

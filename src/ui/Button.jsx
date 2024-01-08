@@ -51,7 +51,7 @@ const variations = {
   mainCard: css`
     width: 50%;
     display: block;
-    margin: 0 auto;
+    margin: 1.25rem auto 0 auto;
     padding: 1rem 1.6rem !important;
     border: 1px solid var(--color-secondary);
     border-radius: 4px;
