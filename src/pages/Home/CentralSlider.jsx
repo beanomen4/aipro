@@ -5,8 +5,8 @@ import capabilitiesIcon from "/src/assets/slider/capabilities.svg";
 import efficiencyIcon from "/src/assets/slider/efficiency.svg";
 import guaranteeIcon from "/src/assets/slider/guarantee.svg";
 import adaptationIcon from "/src/assets/slider/adaptation.svg";
-import arrowLeftIcon from "/src/assets/slider/arrowLeft.svg";
-import arrowRightIcon from "/src/assets/slider/arrowRight.png";
+import arrowLeftImg from "/src/assets/slider/arrowLeft.png";
+import arrowRightImg from "/src/assets/slider/arrowRight.png";
 
 const StyledSlider = styled.div`
   width: 130%;
@@ -20,8 +20,8 @@ const StyledSlider = styled.div`
     height: 5rem;
     margin-right: 30rem;
     border-radius: 10px;
-    background: center/250% url(${arrowLeftIcon});
     box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.21);
+    background: center/250% url(${arrowRightImg});
     z-index: 10;
 
     &:before {
@@ -34,7 +34,7 @@ const StyledSlider = styled.div`
     height: 5rem;
     margin-left: 30rem;
     border-radius: 10px;
-    background: center/250% url(${arrowRightIcon});
+    background: center/250% url(${arrowLeftImg});
     box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.21);
     z-index: 10;
 
@@ -51,11 +51,11 @@ const StyledSlider = styled.div`
     width: 200%;
 
     .slick-arrow.slick-next {
-      margin-right: 30rem;
+      margin-right: 25rem;
     }
 
     .slick-arrow.slick-prev {
-      margin-left: 30rem;
+      margin-left: 25rem;
     }
   }
 `;
