@@ -10,7 +10,8 @@ import customizeIcon from "/src/assets/instruction/configure.svg";
 import usingIcon from "/src/assets/instruction/using.svg";
 
 const StyledHowSection = styled.section`
-  height: 80vh;
+  padding-bottom: 15rem;
+  min-height: 80vh;
   background-color: #1c1c1c;
 
   display: flex;
@@ -23,7 +24,7 @@ const StyledHowSection = styled.section`
   }
 
   @media (max-width: 1024px) {
-    height: 35vh;
+    min-height: 35vh;
   }
 
   @media (max-width: 780px) {
@@ -31,7 +32,7 @@ const StyledHowSection = styled.section`
   }
 
   @media (max-width: 560px) {
-    height: auto;
+    min-height: auto;
     padding-bottom: 5rem;
   }
 `;

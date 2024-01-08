@@ -6,6 +6,7 @@ import Button from "../../ui/Button";
 
 const StyledPromoSection = styled.section`
   min-height: 100vh;
+  padding-bottom: 15rem;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;

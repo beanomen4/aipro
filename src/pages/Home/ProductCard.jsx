@@ -96,7 +96,7 @@ const PriceTab = styled.div`
 
 const Card = styled.div`
   width: 37.5rem;
-  height: 45rem;
+  height: 47.5rem;
   padding-bottom: 1rem;
   position: relative;
 
@@ -128,7 +128,8 @@ const CardHeading = styled.h3`
 const CardSubHeading = styled.p`
   margin-bottom: 3rem;
   color: #bcc4d2;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 500;
 `;
 
 const MonthPrice = styled.p`
@@ -163,7 +164,7 @@ const MonthInfo = styled.div`
 `;
 
 const WorkersCount = styled.div`
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   color: #bcc4d2;
   font-weight: 300;
 
@@ -181,24 +182,24 @@ const WorkersCount = styled.div`
 `;
 
 const Divider = styled.div`
-  margin: 3.5rem 0 0.75rem 0;
+  margin: 3.5rem 0 1rem 0;
   border-bottom: 1px solid #5d637b;
 
   @media (max-width: 1024px) {
-    margin: 3.5rem 0 2rem 0;
+    margin: 1.5rem 0 2rem 0;
   }
 `;
 
 const CardFooter = styled.footer`
-  padding: 0 0.75rem;
+  padding: 0 1.5rem;
   color: #bcc4d2;
-  font-size: 1rem;
+  font-size: 1.4rem;
   text-align: center;
 `;
 
 const CardBackInfo = styled.div`
   width: 37.5rem;
-  height: 45rem;
+  height: 47.5rem;
 
   border-radius: 20px;
   background: linear-gradient(195deg, #416076 2.78%, #3a4360 71.89%);
@@ -228,7 +229,7 @@ const DividerBack = styled.div`
 
 const InfoTable = styled.div`
   width: 80%;
-  height: 20rem;
+  /* height: 20rem; */
   margin: 0 auto 0 auto;
   display: flex;
   flex-direction: column;
@@ -239,7 +240,6 @@ const TableHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  /* margin-bottom: 0.5rem;  */
   font-size: 1.4rem;
   font-weight: 500;
   border-bottom: 1px solid #fff;
@@ -257,7 +257,7 @@ const TableRow = styled.div`
   justify-content: space-between;
   padding-top: 0.3rem;
   border-bottom: 1px solid #bcc4d2;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-align: left;
 
   img {

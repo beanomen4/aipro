@@ -4,16 +4,17 @@ import Heading from "./Heading";
 import CentralSlider from "./CentralSlider";
 
 const StyledBenefitsSection = styled.section`
-  overflow: hidden;
-  height: 70vh;
+  padding-bottom: 15rem;
+  min-height: 70vh;
   background-color: #1c1c1c;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (max-width: 1024px) {
-    height: 35vh;
+    min-height: 35vh;
   }
 
   @media (max-width: 780px) {
@@ -21,7 +22,7 @@ const StyledBenefitsSection = styled.section`
   }
 
   @media (max-width: 560px) {
-    height: auto;
+    min-height: auto;
     padding-bottom: 5rem;
   }
 `;

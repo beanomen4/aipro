@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard";
 import productImg from "/src/assets/products/product-img.png";
 
 const StyledProductsSection = styled.section`
-  padding-bottom: 4rem;
+  padding-bottom: 15rem;
   background: no-repeat 0% 50%/100% url("/products-bg.jpg");
 
   display: flex;
@@ -50,12 +50,7 @@ const SectionImg = styled.div`
   }
 
   @media (max-width: 560px) {
-    top: 22rem;
-    right: -5.5rem;
-
-    img {
-      width: 8rem;
-    }
+    display: none;
   }
 `;
 

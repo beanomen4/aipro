@@ -13,7 +13,8 @@ import freelancersIcon from "/src/assets/services/freelancers.svg";
 import specializedIcon from "/src/assets/services/specialized.svg";
 
 const StyledForWhomSection = styled.section`
-  height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 15rem;
   background: no-repeat 0% 50%/100% url("/forWhom-bg.jpg");
 
   display: flex;
@@ -21,7 +22,7 @@ const StyledForWhomSection = styled.section`
   align-items: center;
 
   @media (max-width: 1024px) {
-    height: 45vh;
+    min-height: 45vh;
   }
 
   @media (max-width: 780px) {
@@ -29,7 +30,7 @@ const StyledForWhomSection = styled.section`
   }
 
   @media (max-width: 560px) {
-    height: auto;
+    min-height: auto;
     padding-bottom: 5rem;
   }
 `;

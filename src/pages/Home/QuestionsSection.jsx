@@ -14,6 +14,7 @@ const StyledQuestionsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 `;
 
 const SectionImg = styled.div`
@@ -41,12 +42,24 @@ const QuestionTab = styled.div`
   }
 `;
 
-const fadeInOut = keyframes`
+const fadeIn = keyframes`
   0% {
-    opacity: 0;
+    opacity: 1;
   }
   50% {
-    opacity: 0.2;
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
   }
   100% {
     opacity: 1;
@@ -54,7 +67,7 @@ const fadeInOut = keyframes`
 `;
 
 const AnimatedQuestionTab = styled(QuestionTab)`
-  animation: ${(props) => (props.isOpen ? fadeInOut : "none")} 0.7s ease-in-out;
+  animation: ${(props) => (props.isopen ? fadeIn : fadeOut)} 0.4s ease-in-out;
 `;
 
 const TabIcon = styled.div`
@@ -164,7 +177,10 @@ function AccordionItem({ num, title, curOpen, onOpen, children }) {
   }
 
   return (
-    <AnimatedQuestionTab onClick={handleToggle} isOpen={isOpen}>
+    <AnimatedQuestionTab
+      onClick={handleToggle}
+      isopen={isOpen ? "open" : undefined}
+    >
       <TabIcon>
         <img src={isOpen ? minusIcon : plusIcon} alt="Tab icon" />
       </TabIcon>

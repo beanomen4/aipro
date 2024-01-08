@@ -51,11 +51,17 @@ const StyledSlider = styled.div`
     width: 200%;
 
     .slick-arrow.slick-next {
-      margin-right: 25rem;
+      position: absolute;
+      top: 50%;
+      right: -1rem;
+      /* margin-right: 25rem; */
     }
 
     .slick-arrow.slick-prev {
-      margin-left: 25rem;
+      position: absolute;
+      top: 50%;
+      left: -1rem;
+      /* margin-left: 25rem; */
     }
   }
 `;
