@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-import Button from "../../ui/Button";
 import checkmarkIcon from "/src/assets/products/checkmark.svg";
 
 const CardContainer = styled.div`
@@ -181,6 +180,45 @@ const WorkersCount = styled.div`
   }
 `;
 
+const ButtonMainCard = styled.button`
+  width: 50%;
+  display: block;
+  margin: 1.25rem auto 0 auto;
+  padding: 1rem 1.6rem;
+  border: 1px solid var(--color-secondary);
+  border-radius: 4px;
+  background-color: var(--color-secondary);
+  color: #fff;
+  font-size: 1.6;
+  font-weight: 500;
+  line-height: 1;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid var(--color-secondary);
+  }
+`;
+
+const ButtonSecondaryCard = styled.button`
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 100px;
+  box-shadow: var(--shadow-sm);
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--color-brand-50);
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1;
+  text-align: center;
+  text-transform: capitalize;
+
+  &:hover {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+  }
+`;
+
 const Divider = styled.div`
   margin: 3.5rem 0 1rem 0;
   border-bottom: 1px solid #5d637b;
@@ -324,16 +362,10 @@ function ProductCard() {
             </select>
             <span>People</span>
           </WorkersCount>
-          <Button variation="mainCard" size="medium">
-            Purchase
-          </Button>
-          <Button
-            variation="secondaryCard"
-            size="small"
-            onClick={() => setIsBackCard(true)}
-          >
+          <ButtonMainCard>Purchase</ButtonMainCard>
+          <ButtonSecondaryCard onClick={() => setIsBackCard(true)}>
             More details
-          </Button>
+          </ButtonSecondaryCard>
           <Divider />
           <CardFooter>
             Send a Telegram mailing in just two clicks! Forget about the hassle
@@ -395,9 +427,7 @@ function ProductCard() {
               <img src={checkmarkIcon} alt="Check mark icon" />
             </TableRow>
           </InfoTable>
-          <Button variation="mainCard" size="medium">
-            Purchase
-          </Button>
+          <ButtonMainCard>Purchase</ButtonMainCard>
         </CardBackInfo>
       )}
     </CardContainer>

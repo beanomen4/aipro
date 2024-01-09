@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import Button from "../../ui/Button";
 import HoveredLink from "../../ui/HoveredLink";
+import Logo from "../../ui/Logo";
 
 const StyledHeader = styled.header`
   width: ${(props) => `${props.width || "90%"}`};
@@ -25,7 +26,7 @@ const StyledHeader = styled.header`
   }
 `;
 
-const ImgContainer = styled.div`
+const ImageContainer = styled.div`
   height: 5rem;
   justify-self: center;
   cursor: pointer;
@@ -53,11 +54,11 @@ function Header({ width, top }) {
 
   return (
     <StyledHeader width={width} top={top}>
-      <ImgContainer>
+      <ImageContainer>
         <Link to="promoSection" smooth={true} offset={-50} duration={700}>
-          <img src="/logo-nav.png" alt="Logo AiPro" />
+          <Logo />
         </Link>
-      </ImgContainer>
+      </ImageContainer>
       <Nav>
         <li>
           <Link to="howSection" smooth={true} offset={-50} duration={700}>

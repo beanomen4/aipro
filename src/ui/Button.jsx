@@ -40,51 +40,18 @@ const variations = {
     }
   `,
   dark: css`
-    color: var(--color-grey-500);
-    background: var(--color-grey-0);
     border: 1px solid var(--color-grey-500);
+    background-color: var(--color-grey-50);
+    color: var(--color-grey-0);
 
     &:hover {
-      background-color: var(--color-grey-50);
-      color: var(--color-grey-0);
+      background: var(--color-grey-0);
+      color: var(--color-grey-500);
     }
   `,
   hovered: css`
     color: var(--color-brand-50);
     background-color: rgba(0, 0, 0, 0);
-
-    &:hover {
-      background-color: var(--color-primary);
-      border: 1px solid var(--color-primary);
-    }
-  `,
-  mainCard: css`
-    width: 50%;
-    display: block;
-    margin: 1.25rem auto 0 auto;
-    padding: 1rem 1.6rem !important;
-    border: 1px solid var(--color-secondary);
-    border-radius: 4px;
-    background-color: var(--color-secondary);
-    color: #fff;
-    font-size: 1.6rem !important;
-    font-weight: 500;
-    line-height: 1;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0);
-      border: 1px solid var(--color-secondary);
-    }
-  `,
-  secondaryCard: css`
-    margin-top: 1rem;
-    padding: 0.5rem 1.5rem !important;
-    background-color: rgba(0, 0, 0, 0);
-    color: var(--color-brand-50);
-    font-size: 1.2rem !important;
-    line-height: 1;
-    text-transform: capitalize !important;
-    font-weight: 300 !important;
 
     &:hover {
       background-color: var(--color-primary);
