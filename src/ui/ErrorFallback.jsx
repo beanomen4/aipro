@@ -7,9 +7,10 @@ const StyledErrorFallback = styled.main`
   height: 100vh;
   background: no-repeat 0% 50%/100% url("/questions-bg.jpg");
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding: 4.8rem;
+  overflow: hidden;
 `;
 
 const Box = styled.div`
