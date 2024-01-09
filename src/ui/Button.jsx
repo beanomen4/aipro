@@ -39,6 +39,16 @@ const variations = {
       background-color: var(--color-grey-50);
     }
   `,
+  dark: css`
+    color: var(--color-grey-500);
+    background: var(--color-grey-0);
+    border: 1px solid var(--color-grey-500);
+
+    &:hover {
+      background-color: var(--color-grey-50);
+      color: var(--color-grey-0);
+    }
+  `,
   hovered: css`
     color: var(--color-brand-50);
     background-color: rgba(0, 0, 0, 0);

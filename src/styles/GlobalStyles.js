@@ -15,6 +15,7 @@ const GlobalStyles = createGlobalStyle`
     --color-brand-700: #4338ca;
 
     --border-radius-sm: 5px;
+    --border-radius-md: 7px;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
 
     // figma

@@ -248,7 +248,7 @@ const TableHeader = styled.div`
     padding: 0 1rem;
     border-radius: 20px 20px 0px 0px;
     background: rgba(12, 69, 92, 0.92);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 `;
 
@@ -261,7 +261,7 @@ const TableRow = styled.div`
   text-align: left;
 
   img {
-    padding: 0 3.75rem;
+    padding: 0 3.85rem;
     background: rgba(12, 69, 92, 0.92);
   }
 `;
