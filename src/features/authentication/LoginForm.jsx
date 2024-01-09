@@ -25,6 +25,7 @@ const Heading = styled.h1`
   font-size: 3.2rem;
   font-weight: 500;
   color: #1c1c1c;
+  z-index: 5;
 `;
 
 const Divider = styled.div`

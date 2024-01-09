@@ -10,6 +10,10 @@ const ImageContainer = styled.div`
   top: 2rem;
   cursor: pointer;
 
+  div img {
+    z-index: 1;
+  }
+
   @media (max-width: 560px) {
     left: 50%;
     transform: translateX(-50%);
