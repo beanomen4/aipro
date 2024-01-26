@@ -1,12 +1,5 @@
-import AuthLayout from "../ui/AuthLayout";
-import SignupForm from "../features/authentication/SignupForm";
-
 function Signup() {
-  return (
-    <AuthLayout>
-      <SignupForm />
-    </AuthLayout>
-  );
+  return <h1>Signup page</h1>;
 }
 
 export default Signup;
