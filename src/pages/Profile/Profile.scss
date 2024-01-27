@@ -2,6 +2,26 @@
     margin: 0px 120px;
     height: 100%;
     .profile {
+        justify-content: center;
+        display: flex;
+        margin-top: 30px;
         color: #fff;
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &__balance {
+                font-weight: 400;
+                margin-top: 5px;
+            }
+            &__name {
+                font-size: 25px;
+                margin-top: 20px;
+                font-weight: 400;
+            }
+            .ant-image-mask {
+                border-radius: 100%;
+            }
+        }
     }
 }
