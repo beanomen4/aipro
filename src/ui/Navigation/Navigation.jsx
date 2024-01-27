@@ -1,12 +1,34 @@
-import React from 'react';
-import './Navigation.scss'
+import React from "react";
+import "./Navigation.scss";
+import { Avatar, Select } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 function Navigation() {
-    return (
-        <nav className='nav'>
-            <div className="logo">AiPro <svg width="57" height="43" viewBox="0 0 57 43" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg></div>
-
-        </nav>
-    );
-};
+  return (
+    <nav className="nav">
+      <div className="logo">
+        AiPro <img src="src/assets/logo-icon.svg" alt="" />
+      </div>
+      <div className="user">
+        <Select
+          defaultValue="Ua"
+          options={[
+            {
+              value: "Ua",
+              label: "Ua",
+            },
+            {
+              value: "En",
+              label: "En",
+            },
+          ]}
+        />
+        <Avatar
+          size="large"
+          src={"https://i.mydramalist.com/66L5p_5c.jpg" || <UserOutlined />}
+        />
+      </div>
+    </nav>
+  );
+}
 
 export default Navigation;
