@@ -21,7 +21,10 @@ function Profile({name, balance}) {
             </div>
           </div>
           <div className="profile__info">
-            
+              <button id="personalBtn" className="btn btn_active">Personal Area</button>
+              <button id="referralBtn" className="btn">Referral system</button>
+              <div className="profile__personal-info"></div>
+              <div className="profile__referral-info"></div>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@
     .profile {
         justify-content: center;
         display: flex;
+        flex-direction: column;
         margin-top: 30px;
         color: #fff;
         .user-info {
@@ -21,6 +22,27 @@
             }
             .ant-image-mask {
                 border-radius: 100%;
+            }
+        }
+        .profile__info {
+            display: flex;
+            height: 100px;
+            margin-top: 40px;
+            background: #181818;
+            position: relative;
+            justify-content: space-between;
+            .btn {
+                position: absolute;
+                right: 0;
+                outline: none;
+                border: none;
+                top: -25px;
+                font-size: 25px;
+                width: fit-content;
+                &_active {
+                    left: 0;
+                    background: #181818;
+                }
             }
         }
     }
