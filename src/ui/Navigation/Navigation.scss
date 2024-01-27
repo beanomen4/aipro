@@ -1,0 +1,27 @@
+.nav {
+    padding: 20px 85px;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: space-between;
+    background: #181818;
+    .logo {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 30px;
+        font-family: 'Montserrat', sans-serif;
+        img {
+            margin-left: 5px;
+            width: 47px;
+            height: 33px;
+        }
+    }
+  .user {
+    display: flex;
+    align-items: center;
+    .change-lang {
+        margin-right: 5px;
+    }
+  }
+}
