@@ -1,13 +1,12 @@
 import { Outlet } from "react-router-dom";
-
-import Header from "../pages/Header";
 import Sidebar from "../pages/Sidebar";
+import Navigation from "./Navigation/Navigation";
 
 function AppLayout() {
   return (
     <div>
-      <Header />
-      <Sidebar />
+      <Navigation />
+      {/* <Sidebar /> */}
       <main>
         <Outlet />
       </main>
