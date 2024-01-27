@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navigation.scss";
-import { Avatar, Select } from "antd";
+import { Avatar, ConfigProvider, Select, theme } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 function Navigation() {
   return (
@@ -9,8 +9,14 @@ function Navigation() {
         AiPro <img src="src/assets/logo-icon.svg" alt="" />
       </div>
       <div className="user">
-        <Select
+      <ConfigProvider
+    theme={{
+      algorithm: theme.darkAlgorithm,
+    }}
+  >
+    <Select
           defaultValue="Ua"
+          className="change-lang"
           options={[
             {
               value: "Ua",
@@ -22,6 +28,7 @@ function Navigation() {
             },
           ]}
         />
+  </ConfigProvider>
         <Avatar
           size="large"
           src={"https://i.mydramalist.com/66L5p_5c.jpg" || <UserOutlined />}

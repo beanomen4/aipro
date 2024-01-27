@@ -21,7 +21,12 @@
     display: flex;
     align-items: center;
     .change-lang {
-        margin-right: 5px;
+        margin-right: 10px;
+        .ant-select-selector {
+            border: none;
+            background: none;
+        }
+        
     }
   }
 }
