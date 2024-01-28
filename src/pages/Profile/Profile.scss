@@ -13,8 +13,13 @@
             flex-direction: column;
             align-items: center;
             &__balance {
+                display: flex;
                 font-weight: 400;
                 margin-top: 5px;
+                button {
+                    position: absolute;
+                    margin-left: 15px;
+                }
             }
             &__name {
                 font-size: 27px;
@@ -27,38 +32,36 @@
         }
         .profile__info {
             display: flex;
-            height: 100px;
+            padding: 20px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
             margin-top: 40px;
             background: #181818;
             position: relative;
-            justify-content: space-between;
+            justify-content: center;
             .btn {
                 position: absolute;
-                right: 0;
+                cursor: pointer;
                 outline: none;
                 padding: 15px 75px;
                 border: none;
                 font-weight: 400;
-                margin-top: -64px;
+                top: -64px;
                 border-radius: 15px 15px 0px 0px;
                 font-size: 30px;
+                background: #1D3039;
+                color: #999D9E;
                 width: fit-content;
-                &::before {
-                    content: '';
-                    position: absolute;
-                    width: 10px;
-                    height: 10px;
-                    background: green;
-                    bottom: 0;  
-                    border-radius: 100%;
-                    bottom: -5px;
-                    right: -5px;
-                }
                 &_active {
-                    left: 0;
+                    color: #fff;
                     background: #181818;
                 }
             }
+        }
+        .personal {
+            display: flex;
+            
+            align-items: center;
         }
     }
 }
