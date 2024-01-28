@@ -2,12 +2,13 @@ import React from "react";
 import "./Navigation.scss";
 import { Avatar, ConfigProvider, Select, theme } from "antd";
 import { UserOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 function Navigation() {
   return (
     <nav className="nav">
-      <div className="logo">
+      <Link className="logo">
         AiPro <img src="src/assets/logo-icon.svg" alt="" />
-      </div>
+      </Link>
       <div className="user">
       <ConfigProvider
     theme={{

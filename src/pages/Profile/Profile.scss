@@ -32,11 +32,13 @@
         }
         .profile__info {
             display: flex;
-            height: 100px;
+            padding: 20px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
             margin-top: 40px;
             background: #181818;
             position: relative;
-            justify-content: space-between;
+            justify-content: center;
             .btn {
                 position: absolute;
                 cursor: pointer;
@@ -44,7 +46,7 @@
                 padding: 15px 75px;
                 border: none;
                 font-weight: 400;
-                margin-top: -64px;
+                top: -64px;
                 border-radius: 15px 15px 0px 0px;
                 font-size: 30px;
                 background: #1D3039;
@@ -55,6 +57,11 @@
                     background: #181818;
                 }
             }
+        }
+        .personal {
+            display: flex;
+            
+            align-items: center;
         }
     }
 }
