@@ -191,16 +191,27 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .auth__container {
+    min-height: 52rem;
+  }
+}
+
 @media screen and (max-width: 576px) {
   .auth h1 {
     font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .auth__container {
+    min-height: 64rem;
   }
 }
 
 @media screen and (max-width: 425px) {
   .auth {
     &__container {
-      min-height: 70rem;
+      min-height: 72rem;
     }
 
     &__form-container {

@@ -1,31 +1,33 @@
 import { useState } from "react";
-import { Button, Checkbox, Form, Input } from "antd";
+import { useNavigate } from "react-router-dom";
+import { Button } from "antd";
 
 import "./Auth.scss";
+import LoginForm from "../../features/authentication/LoginForm";
+import SignupForm from "../../features/authentication/SignupForm";
 
 function Auth() {
-  const [isActive, setIsActive] = useState(false);
+  const navigate = useNavigate();
 
-  const handleLoginClick = () => setIsActive(false);
-  const handleRegisterClick = () => setIsActive(true);
+  // when isActive === true -> signup form active
+  const [isActive, setIsActive] = useState(
+    window.location.pathname === "/signup"
+  );
 
-  const onFinish = (values) => {
-    console.log("Success:", values);
+  const handleLoginClick = () => {
+    setIsActive(false);
+    navigate("/login", { replace: true });
   };
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+  const handleRegisterClick = () => {
+    setIsActive(true);
+    navigate("/signup", { replace: true });
   };
 
   return (
     <div className="auth">
       <div className={`auth__container ${isActive ? "auth__active" : ""}`}>
         <div className="auth__form-container auth__sign-up">
-          <Form
-            name="signup"
-            onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
-            autoComplete="off"
-          >
+          <SignupForm>
             <h1>Create Account</h1>
 
             <div className="auth__social-icons">
@@ -38,75 +40,11 @@ function Auth() {
             </div>
 
             <span>or use your email for registration</span>
-            <Form.Item
-              name="name"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your name!",
-                },
-              ]}
-              style={{ width: "100%", margin: 0 }}
-            >
-              <Input type="text" placeholder="Name" className="auth__input" />
-            </Form.Item>
-
-            <Form.Item
-              name="email"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your email!",
-                },
-              ]}
-              style={{ width: "100%", margin: 0 }}
-            >
-              <Input type="email" placeholder="Email" className="auth__input" />
-            </Form.Item>
-
-            <Form.Item
-              name="password"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your password!",
-                },
-              ]}
-              style={{ width: "100%", marginBottom: "10px" }}
-            >
-              <Input
-                type="password"
-                placeholder="Password"
-                className="auth__input"
-              />
-            </Form.Item>
-
-            <Form.Item
-              style={{ width: "100%", display: "grid", placeItems: "center" }}
-            >
-              <Button
-                type="primary"
-                shape="round"
-                size="large"
-                className="auth__button"
-                htmlType="submit"
-              >
-                Sign In
-              </Button>
-            </Form.Item>
-          </Form>
+          </SignupForm>
         </div>
 
         <div className="auth__form-container auth__sign-in">
-          <Form
-            name="login"
-            initialValues={{
-              remember: true,
-            }}
-            onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
-            autoComplete="off"
-          >
+          <LoginForm>
             <h1>Sign In</h1>
 
             <div className="auth__social-icons">
@@ -119,68 +57,7 @@ function Auth() {
             </div>
 
             <span>or use your email password</span>
-            <Form.Item
-              name="email"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your email!",
-                },
-              ]}
-              style={{ width: "100%", margin: 0 }}
-            >
-              <Input type="email" placeholder="Email" className="auth__input" />
-            </Form.Item>
-
-            <Form.Item
-              name="password"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your password!",
-                },
-              ]}
-              style={{ width: "100%", margin: 0 }}
-            >
-              <Input
-                type="password"
-                placeholder="Password"
-                className="auth__input"
-              />
-            </Form.Item>
-
-            <Form.Item
-              name="remember"
-              valuePropName="checked"
-              style={{
-                width: "100%",
-                marginBottom: "5px",
-                display: "grid",
-                placeItems: "center",
-              }}
-            >
-              <Checkbox>Remember me</Checkbox>
-            </Form.Item>
-
-            <Form.Item
-              style={{
-                width: "100%",
-                display: "grid",
-                placeItems: "center",
-                marginBottom: 0,
-              }}
-            >
-              <Button
-                type="primary"
-                shape="round"
-                size="large"
-                className="auth__button"
-                htmlType="submit"
-              >
-                Sign In
-              </Button>
-            </Form.Item>
-          </Form>
+          </LoginForm>
         </div>
 
         <div className="auth__toggle-container">
