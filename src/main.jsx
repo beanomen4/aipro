@@ -4,7 +4,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import { ConfigProvider } from "antd";
 
 import App from "./App.jsx";
-import ErrorFallback from "./ui/ErrorFallback.jsx";
+import ErrorFallback from "./pages/ErrorFallback/ErrorFallback.jsx";
 
 import "antd/dist/reset.css";
 import "./index.css";
