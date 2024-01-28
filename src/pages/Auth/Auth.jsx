@@ -18,6 +18,7 @@ function Auth() {
     setIsActive(false);
     navigate("/login", { replace: true });
   };
+  
   const handleRegisterClick = () => {
     setIsActive(true);
     navigate("/signup", { replace: true });

@@ -1,11 +1,11 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import AppLayout from "./ui/AppLayout";
-import Account from "./pages/Account";
 import Profile from "./pages/Profile/Profile";
 
 import Auth from "./pages/Auth/Auth";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
+import Test from "./pages/Test";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <Route element={<AppLayout />}>
             <Route index element={<Navigate replace to="profile" />} />
             <Route path="profile" element={<Profile />} />
-            <Route path="account" element={<Account />} />
+            <Route path="test" element={<Test />} />
           </Route>
 
           <Route path="login" element={<Auth />} />
