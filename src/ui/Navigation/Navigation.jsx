@@ -8,8 +8,12 @@ function Navigation() {
   return (
     <nav className="nav">
       <Link className="logo">
-        {/* Vercel doesn't display logo 'src/assets/logo-icon.svg' */}
-        AiPro <img src="/src/assets/logo-icon.svg" alt="Logo AiPro" />
+        {/*
+          Vercel doesn't display logo
+          'src/assets/logo-icon.svg' - doesn't work
+          '/src/assets/logo-icon.svg' - doesn't work
+         */}
+        AiPro <img src="src/assets/logo-icon.svg" alt="Logo AiPro" />
       </Link>
       <div className="user">
         <ConfigProvider
