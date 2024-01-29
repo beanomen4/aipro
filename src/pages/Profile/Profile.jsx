@@ -27,27 +27,8 @@ function Profile({ name, balance, user }) {
           </div>
         </div>
         <div className="profile__info">
-          <button
-            onClick={(e) => changeButtonActive(e.target.id)}
-            id="personalBtn"
-            style={{ left: "0" }}
-            className={`btn ${
-              activeButton === "personalBtn" ? "btn_active" : ""
-            }`}
-          >
-            Personal Area
-          </button>
-          <button
-            onClick={(e) => changeButtonActive(e.target.id)}
-            style={{ right: "0" }}
-            id="referralBtn"
-            className={`btn ${
-              activeButton === "referralBtn" ? "btn_active" : ""
-            }`}
-          >
-            Referral system
-          </button>
-          <div className="personal">
+        {activeButton === 'personalBtn' && (
+            <div className="personal">
             <div className="personal__info">
               <div className="personal__user-info">
                 <div className="title">Рersonal information</div>
@@ -58,14 +39,12 @@ function Profile({ name, balance, user }) {
                   Email: {user || "MariPetrovna@gmail.com"}
                 </div>
                 <ButtonForIcon
-                  icon={<InfoCircleOutlined style={{ color: "#24A1E0" }} />}
+                  icon={<InfoCircleOutlined style={{ color: "#24A1E0", position: 'absolute', top: '15px', right: '15px' }} />}
                 />
               </div>
               <div className="ref-link">
-                Referral link: {user || "http://fgfyjbkjguyfif66//hxb"}
-                <ButtonForIcon
-                  icon={<InfoCircleOutlined style={{ color: "#24A1E0" }} />}
-                />
+                Referral link: <div className="link">{user || "http://fgfyjbkjguyfif66//hxb"}</div>
+                <div className="ref-link-item">
                 <ConfigProvider
                   theme={{
                     algorithm: theme.darkAlgorithm,
@@ -81,6 +60,10 @@ function Profile({ name, balance, user }) {
                     infoMessage("Copy link!");
                   }}
                 />
+                 <ButtonForIcon
+                  icon={<InfoCircleOutlined style={{ color: "#24A1E0"}} />}
+                />
+                </div>
               </div>
               <Button type="primary" style={{textAlign: 'left'}} block>
               All applications
@@ -100,7 +83,9 @@ function Profile({ name, balance, user }) {
               </Button>
             </div>
           </div>
-          <div className="referral">
+        )}
+        {activeButton === 'referralBtn' && (
+            <div className="referral">
             <div className="referral__info">
             <div className="ref-link">
                 Referral link: {user || "http://fgfyjbkjguyfif66//hxb"}
@@ -126,6 +111,7 @@ function Profile({ name, balance, user }) {
             </div>
             <div className="referral__table"></div>
           </div>
+        )}
         </div>
       </div>
     </div>
