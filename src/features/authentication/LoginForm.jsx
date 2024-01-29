@@ -1,96 +1,116 @@
-import { Button, Checkbox, Form, Input, Spin } from "antd";
+import { Button, Checkbox, Form, Input, Spin, message } from "antd";
 
 import { useLogin } from "./useLogin";
 import "../../pages/Auth/Auth.scss";
 
 function LoginForm({ children }) {
+  const [form] = Form.useForm();
   const { login, isLoading } = useLogin();
 
+  const [messageApi, contextHolder] = message.useMessage();
+
   const onFinish = ({ email, password }) => {
-    login({ email, password });
+    login(
+      { email, password },
+      {
+        onSettled: () => form.resetFields(),
+        onError: () => {
+          messageApi.open({
+            type: "error",
+            content: "Provided email or password are incorrect",
+          });
+        },
+      }
+    );
   };
 
   return (
-    <Form
-      name="login"
-      initialValues={{
-        remember: true,
-      }}
-      onFinish={onFinish}
-      autoComplete="off"
-    >
-      {children}
+    <>
+      {contextHolder}
 
-      <Form.Item
-        name="email"
-        rules={[
-          {
-            required: true,
-            message: "Please input your email!",
-          },
-        ]}
-        style={{ width: "100%", margin: 0 }}
-      >
-        <Input
-          type="email"
-          placeholder="Email"
-          className="auth__input"
-          disabled={isLoading}
-        />
-      </Form.Item>
-
-      <Form.Item
-        name="password"
-        rules={[
-          {
-            required: true,
-            message: "Please input your password!",
-          },
-        ]}
-        style={{ width: "100%", margin: 0 }}
-      >
-        <Input.Password
-          type="password"
-          placeholder="Password"
-          className="auth__input"
-          disabled={isLoading}
-        />
-      </Form.Item>
-
-      <Form.Item
-        name="remember"
-        valuePropName="checked"
-        style={{
-          width: "100%",
-          marginBottom: "5px",
-          display: "grid",
-          placeItems: "center",
+      <Form
+        form={form}
+        initialValues={{
+          email: "test@test",
+          password: "12345678",
+          remember: true,
         }}
+        onFinish={onFinish}
+        autoComplete="off"
       >
-        <Checkbox disabled={isLoading}>Remember me</Checkbox>
-      </Form.Item>
+        {children}
 
-      <Form.Item
-        style={{
-          width: "100%",
-          display: "grid",
-          placeItems: "center",
-          marginBottom: 0,
-        }}
-      >
-        <Button
-          ghost={isLoading}
-          type="primary"
-          shape="round"
-          size="large"
-          className="auth__button"
-          disabled={isLoading}
-          htmlType="submit"
+        <Form.Item
+          name="email"
+          rules={[
+            {
+              required: true,
+              message: "Please input your email!",
+            },
+          ]}
+          style={{ width: "100%", margin: 0 }}
         >
-          {isLoading ? <Spin /> : "Sign In"}
-        </Button>
-      </Form.Item>
-    </Form>
+          <Input
+            type="email"
+            placeholder="Email"
+            className="auth__input"
+            disabled={isLoading}
+          />
+        </Form.Item>
+
+        <Form.Item
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: "Please input your password!",
+            },
+          ]}
+          style={{ width: "100%", margin: 0 }}
+        >
+          <Input.Password
+            type="password"
+            placeholder="Password"
+            className="auth__input"
+            disabled={isLoading}
+          />
+        </Form.Item>
+
+        <Form.Item
+          name="remember"
+          valuePropName="checked"
+          style={{
+            width: "100%",
+            marginBottom: "5px",
+            display: "grid",
+            placeItems: "center",
+          }}
+        >
+          <Checkbox disabled={isLoading}>Remember me</Checkbox>
+        </Form.Item>
+
+        <Form.Item
+          style={{
+            width: "100%",
+            display: "grid",
+            placeItems: "center",
+            marginBottom: 0,
+          }}
+        >
+          <Button
+            ghost={isLoading}
+            type="primary"
+            shape="round"
+            size="large"
+            className="auth__button"
+            disabled={isLoading}
+            htmlType="submit"
+          >
+            {isLoading ? <Spin /> : "Sign In"}
+          </Button>
+        </Form.Item>
+      </Form>
+    </>
   );
 }
 

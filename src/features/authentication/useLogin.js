@@ -1,22 +1,17 @@
 import { useNavigate } from "react-router-dom";
-import { useMutation } from "@tanstack/react-query";
-import { message } from "antd";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { login as loginApi } from "../../services/apiAuth";
 
 export function useLogin() {
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   const { mutate: login, isLoading } = useMutation({
     mutationFn: ({ email, password }) => loginApi({ email, password }),
     onSuccess: (user) => {
-      console.log(user);
-      message.success("You have successfully logged in");
+      queryClient.setQueriesData(["user", user]);
       navigate("/profile");
-    },
-    onError: (err) => {
-      console.log("ERROR", err);
-      message.error("Provided email or password are incorrect");
     },
   });
 

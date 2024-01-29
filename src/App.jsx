@@ -2,12 +2,13 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
+import ProtectedRoute from "./ui/ProtectedRoute";
 import AppLayout from "./ui/AppLayout";
 import Profile from "./pages/Profile/Profile";
+import Test from "./pages/Test";
 
 import Auth from "./pages/Auth/Auth";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
-import Test from "./pages/Test";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,7 +25,13 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route element={<AppLayout />}>
+          <Route
+            element={
+              <ProtectedRoute>
+                <AppLayout />
+              </ProtectedRoute>
+            }
+          >
             <Route index element={<Navigate replace to="profile" />} />
             <Route path="profile" element={<Profile />} />
             <Route path="test" element={<Test />} />
