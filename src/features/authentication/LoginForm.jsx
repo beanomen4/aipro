@@ -13,7 +13,9 @@ function LoginForm({ children }) {
     login(
       { email, password },
       {
-        onSettled: () => form.resetFields(),
+        onSettled: () => {
+          form.resetFields();
+        },
         onError: () => {
           messageApi.open({
             type: "error",
@@ -106,7 +108,7 @@ function LoginForm({ children }) {
             disabled={isLoading}
             htmlType="submit"
           >
-            {isLoading ? <Spin /> : "Sign In"}
+            {isLoading ? <Spin /> : "Log In"}
           </Button>
         </Form.Item>
       </Form>

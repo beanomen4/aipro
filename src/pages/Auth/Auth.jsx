@@ -75,7 +75,7 @@ function Auth() {
                 }`}
                 onClick={handleLoginClick}
               >
-                Sign In
+                Log In
               </Button>
             </div>
 
