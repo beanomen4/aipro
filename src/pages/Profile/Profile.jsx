@@ -101,7 +101,29 @@ function Profile({ name, balance, user }) {
             </div>
           </div>
           <div className="referral">
-            <div className="referral__info"></div>
+            <div className="referral__info">
+            <div className="ref-link">
+                Referral link: {user || "http://fgfyjbkjguyfif66//hxb"}
+                <ButtonForIcon
+                  icon={<InfoCircleOutlined style={{ color: "#24A1E0" }} />}
+                />
+                <ConfigProvider
+                  theme={{
+                    algorithm: theme.darkAlgorithm,
+                  }}
+                >
+                  {messageContext}
+                </ConfigProvider>
+                <CopyOutlined
+                  onClick={() => {
+                    navigator.clipboard.writeText(
+                      user || "http://fgfyjbkjguyfif66//hxb"
+                    );
+                    infoMessage("Copy link!");
+                  }}
+                />
+              </div>
+            </div>
             <div className="referral__table"></div>
           </div>
         </div>
