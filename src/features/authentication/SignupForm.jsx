@@ -55,7 +55,11 @@ function SignupForm({ children }) {
         ]}
         style={{ width: "100%", marginBottom: "10px" }}
       >
-        <Input type="password" placeholder="Password" className="auth__input" />
+        <Input.Password
+          type="password"
+          placeholder="Password"
+          className="auth__input"
+        />
       </Form.Item>
 
       <Form.Item

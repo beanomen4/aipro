@@ -1,13 +1,13 @@
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Checkbox, Form, Input, Spin } from "antd";
+
+import { useLogin } from "./useLogin";
 import "../../pages/Auth/Auth.scss";
 
 function LoginForm({ children }) {
-  const onFinish = (values) => {
-    console.log("Success:", values);
-  };
+  const { login, isLoading } = useLogin();
 
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+  const onFinish = ({ email, password }) => {
+    login({ email, password });
   };
 
   return (
@@ -17,11 +17,10 @@ function LoginForm({ children }) {
         remember: true,
       }}
       onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
       {children}
-      
+
       <Form.Item
         name="email"
         rules={[
@@ -32,7 +31,12 @@ function LoginForm({ children }) {
         ]}
         style={{ width: "100%", margin: 0 }}
       >
-        <Input type="email" placeholder="Email" className="auth__input" />
+        <Input
+          type="email"
+          placeholder="Email"
+          className="auth__input"
+          disabled={isLoading}
+        />
       </Form.Item>
 
       <Form.Item
@@ -45,7 +49,12 @@ function LoginForm({ children }) {
         ]}
         style={{ width: "100%", margin: 0 }}
       >
-        <Input type="password" placeholder="Password" className="auth__input" />
+        <Input.Password
+          type="password"
+          placeholder="Password"
+          className="auth__input"
+          disabled={isLoading}
+        />
       </Form.Item>
 
       <Form.Item
@@ -58,7 +67,7 @@ function LoginForm({ children }) {
           placeItems: "center",
         }}
       >
-        <Checkbox>Remember me</Checkbox>
+        <Checkbox disabled={isLoading}>Remember me</Checkbox>
       </Form.Item>
 
       <Form.Item
@@ -70,13 +79,15 @@ function LoginForm({ children }) {
         }}
       >
         <Button
+          ghost={isLoading}
           type="primary"
           shape="round"
           size="large"
           className="auth__button"
+          disabled={isLoading}
           htmlType="submit"
         >
-          Sign In
+          {isLoading ? <Spin /> : "Sign In"}
         </Button>
       </Form.Item>
     </Form>

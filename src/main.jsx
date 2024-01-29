@@ -16,6 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       onReset={() => window.location.replace("/")}
     >
       <ConfigProvider
+        componentSize="middle"
         theme={{
           token: {
             colorPrimary: "#24a1e0",
