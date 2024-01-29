@@ -27,26 +27,6 @@ function Profile({ name, balance, user }) {
           </div>
         </div>
         <div className="profile__info">
-          <button
-            onClick={(e) => changeButtonActive(e.target.id)}
-            id="personalBtn"
-            style={{ left: "0" }}
-            className={`btn ${
-              activeButton === "personalBtn" ? "btn_active" : ""
-            }`}
-          >
-            Personal Area
-          </button>
-          <button
-            onClick={(e) => changeButtonActive(e.target.id)}
-            style={{ right: "0" }}
-            id="referralBtn"
-            className={`btn ${
-              activeButton === "referralBtn" ? "btn_active" : ""
-            }`}
-          >
-            Referral system
-          </button>
         {activeButton === 'personalBtn' && (
             <div className="personal">
             <div className="personal__info">
