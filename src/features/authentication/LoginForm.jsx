@@ -33,8 +33,8 @@ function LoginForm({ children }) {
       <Form
         form={form}
         initialValues={{
-          email: "test@test",
-          password: "12345678",
+          // email: "test@test",
+          // password: "12345678",
           remember: true,
         }}
         onFinish={onFinish}

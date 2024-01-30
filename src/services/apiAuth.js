@@ -11,6 +11,12 @@ export async function login({ email, password }) {
   return data;
 }
 
+export async function authGoogle() {
+  supabase.auth.signInWithOAuth({
+    provider: "google",
+  });
+}
+
 export async function signup({ fullName, email, password }) {
   const { data, error } = await supabase.auth.signUp({
     email,

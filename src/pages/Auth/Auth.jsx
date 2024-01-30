@@ -6,6 +6,8 @@ import "./Auth.scss";
 import LoginForm from "../../features/authentication/LoginForm";
 import SignupForm from "../../features/authentication/SignupForm";
 
+import { authGoogle } from "../../services/apiAuth";
+
 function Auth() {
   const navigate = useNavigate();
 
@@ -18,7 +20,7 @@ function Auth() {
     setIsActive(false);
     navigate("/login", { replace: true });
   };
-  
+
   const handleRegisterClick = () => {
     setIsActive(true);
     navigate("/signup", { replace: true });
@@ -32,10 +34,10 @@ function Auth() {
             <h1>Create Account</h1>
 
             <div className="auth__social-icons">
-              <a href="#" className="auth__icon">
+              <a href="#" className="auth__icon" onClick={authGoogle}>
                 <i className="fa-brands fa-google"></i>
               </a>
-              <a href="#" className="auth__icon">
+              <a href="#" className="auth__icon" disabled>
                 <i className="fa-brands fa-facebook-f"></i>
               </a>
             </div>
@@ -49,10 +51,10 @@ function Auth() {
             <h1>Sign In</h1>
 
             <div className="auth__social-icons">
-              <a href="#" className="auth__icon">
+              <a href="#" className="auth__icon" onClick={authGoogle}>
                 <i className="fa-brands fa-google"></i>
               </a>
-              <a href="#" className="auth__icon">
+              <a href="#" className="auth__icon" disabled>
                 <i className="fa-brands fa-facebook-f"></i>
               </a>
             </div>

@@ -37,11 +37,7 @@ function SignupForm({ children }) {
     <>
       {contextHolder}
 
-      <Form
-        form={form}
-        onFinish={onFinish}
-        autoComplete="off"
-      >
+      <Form form={form} onFinish={onFinish} autoComplete="off">
         {children}
 
         <Form.Item
