@@ -4,9 +4,9 @@ import { useSignup } from "./useSignup";
 import "../../pages/Auth/Auth.scss";
 
 function SignupForm({ children }) {
-  const [form] = Form.useForm();
   const { signup, isLoading } = useSignup();
 
+  const [form] = Form.useForm();
   const [messageApi, contextHolder] = message.useMessage();
 
   const onFinish = ({ fullName, email, password }) => {

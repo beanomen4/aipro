@@ -2,11 +2,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "antd";
 
-import "./Auth.scss";
+import { authGoogle } from "../../services/apiAuth";
 import LoginForm from "../../features/authentication/LoginForm";
 import SignupForm from "../../features/authentication/SignupForm";
 
-import { authGoogle } from "../../services/apiAuth";
+import "./Auth.scss";
 
 function Auth() {
   const navigate = useNavigate();

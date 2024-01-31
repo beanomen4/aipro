@@ -4,18 +4,16 @@ import { useLogin } from "./useLogin";
 import "../../pages/Auth/Auth.scss";
 
 function LoginForm({ children }) {
-  const [form] = Form.useForm();
   const { login, isLoading } = useLogin();
 
+  const [form] = Form.useForm();
   const [messageApi, contextHolder] = message.useMessage();
 
   const onFinish = ({ email, password }) => {
     login(
       { email, password },
       {
-        onSettled: () => {
-          form.resetFields();
-        },
+        onSettled: () => form.resetFields(),
         onError: () => {
           messageApi.open({
             type: "error",
@@ -32,11 +30,7 @@ function LoginForm({ children }) {
 
       <Form
         form={form}
-        initialValues={{
-          // email: "test@test",
-          // password: "12345678",
-          remember: true,
-        }}
+        initialValues={{ remember: true }}
         onFinish={onFinish}
         autoComplete="off"
       >
@@ -83,9 +77,9 @@ function LoginForm({ children }) {
           valuePropName="checked"
           style={{
             width: "100%",
-            marginBottom: "5px",
             display: "grid",
             placeItems: "center",
+            marginBottom: "5px",
           }}
         >
           <Checkbox disabled={isLoading}>Remember me</Checkbox>
