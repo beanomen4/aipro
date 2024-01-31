@@ -3,10 +3,12 @@ import "./Profile.scss";
 import { Button, ConfigProvider, Image, message, theme } from "antd";
 import { CopyOutlined, InfoCircleOutlined } from "@ant-design/icons";
 import ButtonForIcon from "../../ui/ButtonForIcon";
-function Profile({ name, balance, user }) {
+import { useUser } from "../../features/authentication/useUser";
+function Profile({ balance }) {
   const [activeButton, setActiveButton] = useState("personalBtn");
   const [messageShow, messageContext] = message.useMessage();
-
+  const { user } = useUser();
+  const { picture, name, email } = user.user_metadata;
   return (
     <div className="wrapper">
       <div className="profile">
@@ -15,7 +17,7 @@ function Profile({ name, balance, user }) {
             <Image
               width={170}
               style={{ borderRadius: "100%" }}
-              src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+              src={picture}
             />
             <div className="user-info__name">{name || "Masha Petrenko"}</div>
             <div className="user-info__balance">
@@ -33,17 +35,17 @@ function Profile({ name, balance, user }) {
               <div className="personal__user-info">
                 <div className="title">Рersonal information</div>
                 <div id="name" className="personal__text">
-                  Name: {user || "Mari_Petrovna"}
+                  Name: {name || "Mari_Petrovna"}
                 </div>
                 <div id="email" className="personal__text">
-                  Email: {user || "MariPetrovna@gmail.com"}
+                  Email: {email || "MariPetrovna@gmail.com"}
                 </div>
                 <ButtonForIcon
                   icon={<InfoCircleOutlined style={{ color: "#24A1E0", position: 'absolute', top: '15px', right: '15px' }} />}
                 />
               </div>
               <div className="ref-link">
-                Referral link: <div className="link">{user || "http://fgfyjbkjguyfif66//hxb"}</div>
+                Referral link: <div className="link">{"http://fgfyjbkjguyfif66//hxb"}</div>
                 <div className="ref-link-item">
                 <ConfigProvider
                   theme={{
