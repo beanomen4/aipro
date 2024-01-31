@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
 import { Avatar, ConfigProvider, Dropdown, Select, theme } from "antd";
 import { UserOutlined } from "@ant-design/icons";
+import { useUser } from "../../features/authentication/useUser";
+import { useLogout } from "../../features/authentication/useLogout";
 import logo from "./../../assets/logo-icon.svg";
 import "./Navigation.scss";
 
 function Navigation() {
+  const { logout } = useLogout();
+  const { user } = useUser();
+  const { picture } = user.user_metadata;
   const items = [
     {
       label: <Link to={'/'}>AiPro</Link>,
@@ -29,7 +34,7 @@ function Navigation() {
       ],
     },
     {
-      label: <Link to={'/'}>Exit</Link>,
+      label: <Link onClick={logout}>Exit</Link>,
       key: '3',
     },
   ];
@@ -70,7 +75,7 @@ function Navigation() {
                <Avatar
           className="avatar"
           size="large"
-          src={"https://i.mydramalist.com/66L5p_5c.jpg" || <UserOutlined />}
+          src={picture|| <UserOutlined />}
         />
             </Dropdown>
       </div>
