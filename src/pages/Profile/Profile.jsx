@@ -6,37 +6,27 @@ import { useUser } from "../../features/authentication/useUser";
 import ButtonForIcon from "../../ui/ButtonForIcon";
 
 import "./Profile.scss";
-function Profile() {
-  const [activeButton, setActiveButton] = useState("personalBtn");
-  const [messageShow, messageContext] = message.useMessage();
+
+function Profile({ balance }) {
   const { user } = useUser();
   const { picture, name, email } = user.user_metadata;
+  
+  const [activeButton, setActiveButton] = useState("personalBtn");
+  const [messageShow, messageContext] = message.useMessage();
+
   return (
     <div className="wrapper">
       <div className="profile">
         <div className="profile__head">
           <div className="user-info">
-           <div className="user-photo">
-           <img
+            <Image
               width={170}
+              style={{ borderRadius: "100%" }}
               src={picture}
             />
-            <div className="send-photo">
-            <input
-        type="file"
-        name="myImage"
-        id="sendPhoto"
-        onChange={(event) => {
-        }}
-      />
-      <label for="sendPhoto">
-          <img src={iconPencil} />
-      </label>
-            </div>
-           </div>
             <div className="user-info__name">{name || "Masha Petrenko"}</div>
             <div className="user-info__balance">
-              Вalance: {"0"} AiCoin
+              Вalance: {balance || "1,000"} AiCoin
               <ButtonForIcon
                 icon={<InfoCircleOutlined style={{ color: "#24A1E0" }} />}
               />
@@ -88,7 +78,7 @@ function Profile() {
             </div>
             <div className="personal__pay">
               <div className="title">Payments</div>
-              <div className="personal__balance">Balance: {'0'} AIC</div>
+              <div className="personal__balance">Balance: {balance || '1,000'} AIC</div>
 
                 <ul className="personal__history">
                     <li>Income: + 431,46 AIC <div className="history-date">02 / 12 / 24</div></li>
