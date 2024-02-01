@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./Profile.scss";
-import { Button, ConfigProvider, Image, message, theme } from "antd";
+import { Button, ConfigProvider, message, theme } from "antd";
+import iconPencil from './../../assets/pencil.svg'
 import { CopyOutlined, InfoCircleOutlined } from "@ant-design/icons";
 import ButtonForIcon from "../../ui/ButtonForIcon";
 import { useUser } from "../../features/authentication/useUser";
-function Profile({ balance }) {
+function Profile() {
   const [activeButton, setActiveButton] = useState("personalBtn");
   const [messageShow, messageContext] = message.useMessage();
   const { user } = useUser();
@@ -14,14 +15,27 @@ function Profile({ balance }) {
       <div className="profile">
         <div className="profile__head">
           <div className="user-info">
-            <Image
+           <div className="user-photo">
+               <img
               width={170}
-              style={{ borderRadius: "100%" }}
               src={picture}
             />
+            <div className="send-photo">
+            <input
+        type="file"
+        name="myImage"
+        id="sendPhoto"
+        onChange={(event) => {
+        }}
+      />
+      <label for="sendPhoto">
+          <img src={iconPencil} />
+      </label>
+            </div>
+           </div>
             <div className="user-info__name">{name || "Masha Petrenko"}</div>
             <div className="user-info__balance">
-              Вalance: {balance || "1,000"} AiCoin
+              Вalance: {"0"} AiCoin
               <ButtonForIcon
                 icon={<InfoCircleOutlined style={{ color: "#24A1E0" }} />}
               />
@@ -73,7 +87,7 @@ function Profile({ balance }) {
             </div>
             <div className="personal__pay">
               <div className="title">Payments</div>
-              <div className="personal__balance">Balance: {balance || '1,000'} AIC</div>
+              <div className="personal__balance">Balance: {'0'} AIC</div>
 
                 <ul className="personal__history">
                     <li>Income: + 431,46 AIC <div className="history-date">02 / 12 / 24</div></li>
