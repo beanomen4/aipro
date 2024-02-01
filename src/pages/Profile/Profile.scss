@@ -71,62 +71,89 @@
             }
         }
 
-        .profile__info {
-            display: flex;
-            padding: 20px;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
-            margin-top: 40px;
-            background: #181818;
-            position: relative;
-            justify-content: center;
-
-            .btn {
-                position: absolute;
-                cursor: pointer;
-                outline: none;
-                padding: 15px 75px;
-                border: none;
-                font-weight: 400;
-                top: -64px;
-                border-radius: 15px 15px 0px 0px;
-                font-size: 30px;
-                background: #1D3039;
-                color: #999D9E;
-                width: fit-content;
-
-                &_active {
-                    color: #fff;
-                    background: #181818;
-                }
-            }
-        }
-
         .personal {
             display: flex;
-            align-items: center;
-            width: 100%;
-
+            flex-direction: column;
+            position: relative;
+            cursor: pointer;
+            clip-path: polygon(0px 71.2282px, 0.72291px 19.7193px, 0.72291px 19.7193px, 1.024869773px 16.50992301px, 1.811758624px 13.46940288px, 3.043214751px 10.63753887px, 4.678876352px 8.05413024px, 6.678381625px 5.75897625px, 9.001368768px 3.79187616px, 11.607475979px 2.19262923px, 14.456341456px 1.00103472px, 17.507603397px 0.25689189px, 20.7209px 3.2481976396009E-31px, 473.334px 0px, 473.334px 0px, 476.578178px 0.2617661px, 479.655664px 1.0196128px, 482.525286px 2.2323627px, 485.145872px 3.8588384px, 487.47625px 5.8578625px, 489.475248px 8.1882576px, 491.101694px 10.8088463px, 492.314416px 13.6784512px, 493.072242px 16.7558949px, 493.334px 20px, 493.334px 51.2282px, 493.334px 51.2282px, 493.595758px 54.4723051px, 494.353584px 57.5497488px, 495.566306px 60.4193537px, 497.192752px 63.0399424px, 499.19175px 65.3703375px, 501.522128px 67.3693616px, 504.142714px 68.9958373px, 507.012336px 70.2085872px, 510.089822px 70.9664339px, 513.334px 71.2282px, 1015.66px 71.2282px, 1467px 71.2282px, 1467px 71.2282px, 1470.24515px 71.4899661px, 1473.3232px 72.2478128px, 1476.19305px 73.4605627px, 1478.8136px 75.0870384px, 1481.14375px 77.0860625px, 1483.1424px 79.4164576px, 1484.76845px 82.0370463px, 1485.9808px 84.9066512px, 1486.73835px 87.9840949px, 1487px 91.2282px, 1487px 457px, 1487px 457px, 1486.73835px 460.244178px, 1485.9808px 463.321664px, 1484.76845px 466.191286px, 1483.1424px 468.811872px, 1481.14375px 471.14225px, 1478.8136px 473.141248px, 1476.19305px 474.767694px, 1473.3232px 475.980416px, 1470.24515px 476.738242px, 1467px 477px, 20px 477px, 20px 477px, 16.75589976px 476.738242px, 13.67845888px 475.980416px, 10.80885512px 474.767694px, 8.18826624px 473.141248px, 5.85787px 471.14225px, 3.85884416px 468.811872px, 2.23236648px 466.191286px, 1.01961472px 463.321664px, 0.26176664px 460.244178px, 3.3111154597681E-31px 457px, 0px 71.2282px); 
+            background: #181818;
+            border-radius: 20px;
+            margin-top: -10px;
+            .personal__head-name{
+              display:flex;
+              font-size: 30px;
+              margin-left: 130px;
+              font-weight: 500;
+              margin-top: 15px;
+              position: absolute;
+            }
+            &__main-info {
+              margin-right: 20px;
+              width: 50%;
+            }
             &__info {
-                width: 50%;
                 position: relative;
-                margin-right: 20px;
+                margin: 15px;
+               margin-top: 90px;
+                margin-bottom: 20px;
+                display: flex;
             }
-
             &__user-info {
-                padding: 20px;
-                padding-bottom: 5px;
-                background: linear-gradient(261.31deg, #1C1E1E 39.3%, #1E4558 108.39%),
-                    linear-gradient(0deg, rgba(29, 48, 57, 0.3), rgba(29, 48, 57, 0.3));
-                border-radius: 15px;
-                margin-bottom: 15px;
+              padding: 20px;
+              padding-bottom: 5px;
+              position: relative;
+              background: linear-gradient(261.31deg, #1C1E1E 39.3%, #1E4558 108.39%),
+                  linear-gradient(0deg, rgba(29, 48, 57, 0.3), rgba(29, 48, 57, 0.3));
+              border-radius: 15px;
+              margin-bottom: 15px;
 
-                .title {
-                    font-size: 23px;
-                    font-weight: 500;
-                    margin-bottom: 20px;
-                }
+              .title {
+                  font-size: 23px;
+                  font-weight: 500;
+                  margin-bottom: 20px;
+              }
+          }
+          &__pay {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            justify-content: space-between;
+            position: relative;
+            background: linear-gradient(261.31deg, #1C1E1E 39.3%, #1E4558 108.39%),
+            linear-gradient(0deg, rgba(29, 48, 57, 0.3), rgba(29, 48, 57, 0.3));
+            border-radius: 15px;
+            padding: 20px;
+            .title {
+              font-size: 20px;
+              font-weight: 500;
             }
+            .personal__balance {
+              margin-bottom: 20px;
+              margin-top: 10px;
+              font-size: 13px;
+              font-weight: 500;
+            }
+            .personal__history {
+              display: flex;
+              flex-direction: column;
+              padding: 0;
+             margin-bottom: 0px;
+             button {
+              height: 45px;
+              font-size: 20px;
+              border-radius: 15px;
+              margin-top: 15px;
+             }
+             li {
+              display: flex;
+              justify-content: space-between;
+              .history-date {
+                color:#B8B8B8;
+              }
+             }
+            }
+          }
         }
 
         .ref-link {
@@ -150,7 +177,7 @@
             .ref-link-item {
                 display: flex;
                 align-items: center;
-                top: 10px;
+                top: 5px;
                 right: 10px;
                 position: absolute;
             }
