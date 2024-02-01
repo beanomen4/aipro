@@ -1,14 +1,19 @@
-import React, { useState } from "react";
-import "./Profile.scss";
+import { useState } from "react";
 import { Button, ConfigProvider, Image, message, theme } from "antd";
 import { CopyOutlined, InfoCircleOutlined } from "@ant-design/icons";
-import ButtonForIcon from "../../ui/ButtonForIcon";
+
 import { useUser } from "../../features/authentication/useUser";
+import ButtonForIcon from "../../ui/ButtonForIcon";
+
+import "./Profile.scss";
+
 function Profile({ balance }) {
-  const [activeButton, setActiveButton] = useState("personalBtn");
-  const [messageShow, messageContext] = message.useMessage();
   const { user } = useUser();
   const { picture, name, email } = user.user_metadata;
+  
+  const [activeButton, setActiveButton] = useState("personalBtn");
+  const [messageShow, messageContext] = message.useMessage();
+
   return (
     <div className="wrapper">
       <div className="profile">
