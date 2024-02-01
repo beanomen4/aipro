@@ -1,125 +1,160 @@
 .wrapper {
-  height: 100%;
-  margin: 0px 120px;
+    margin: 0px 120px;
+    height: 100%;
 
-  .profile {
-    font-family: "Montserrat", sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 30px;
-    color: #fff;
-
-    .user-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      &__balance {
+    .profile {
+        font-family: 'Montserrat', sans-serif;
+        justify-content: center;
         display: flex;
-        margin-top: 5px;
-        font-weight: 400;
+        flex-direction: column;
+        margin-top: 30px;
+        color: #fff;
 
-        button {
-          position: absolute;
-          margin-left: 15px;
+        .user-photo {
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            img {
+                border-radius: 100%;
+            }
+            .send-photo {
+                input {
+                    display: none;
+                }
+                label {
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    justify-content: center;
+                    position: absolute;
+                    opacity: 0;
+                    z-index: 2;
+                    transition: .3s;
+                    &:hover {
+                        background: #86807A8C;
+                        opacity: 1;
+                    }
+                    border-radius: 100%;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                }
+            }
         }
-      }
 
-      &__name {
-        margin-top: 20px;
-        font-size: 27px;
-        font-weight: 400;
-      }
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-      .ant-image-mask {
-        border-radius: 100%;
-      }
-    }
+            &__balance {
+                display: flex;
+                font-weight: 400;
+                margin-top: 5px;
 
-    .profile__info {
-      display: flex;
-      justify-content: center;
-      position: relative;
-      margin-top: 40px;
-      padding: 20px;
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px;
-      background: #181818;
+                button {
+                    position: absolute;
+                    margin-left: 15px;
+                }
+            }
 
-      .btn {
-        width: fit-content;
-        position: absolute;
-        top: -64px;
-        padding: 15px 75px;
-        border: none;
-        border-radius: 15px 15px 0px 0px;
-        background: #1d3039;
-        font-size: 30px;
-        font-weight: 400;
-        color: #999d9e;
-        outline: none;
-        cursor: pointer;
+            &__name {
+                font-size: 27px;
+                margin-top: 20px;
+                font-weight: 400;
+            }
 
-        &_active {
-          background: #181818;
-          color: #fff;
+            .ant-image-mask {
+                border-radius: 100%;
+            }
         }
-      }
-    }
 
-    .personal {
-      width: 100%;
-      display: flex;
-      align-items: center;
+        .profile__info {
+            display: flex;
+            padding: 20px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            margin-top: 40px;
+            background: #181818;
+            position: relative;
+            justify-content: center;
 
-      &__info {
-        width: 50%;
-        position: relative;
-        margin-right: 20px;
-      }
+            .btn {
+                position: absolute;
+                cursor: pointer;
+                outline: none;
+                padding: 15px 75px;
+                border: none;
+                font-weight: 400;
+                top: -64px;
+                border-radius: 15px 15px 0px 0px;
+                font-size: 30px;
+                background: #1D3039;
+                color: #999D9E;
+                width: fit-content;
 
-      &__user-info {
-        margin-bottom: 15px;
-        padding: 20px;
-        padding-bottom: 5px;
-        border-radius: 15px;
-        background: linear-gradient(261.31deg, #1c1e1e 39.3%, #1e4558 108.39%),
-          linear-gradient(0deg, rgba(29, 48, 57, 0.3), rgba(29, 48, 57, 0.3));
-
-        .title {
-          margin-bottom: 20px;
-          font-size: 23px;
-          font-weight: 500;
+                &_active {
+                    color: #fff;
+                    background: #181818;
+                }
+            }
         }
-      }
+
+        .personal {
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+            &__info {
+                width: 50%;
+                position: relative;
+                margin-right: 20px;
+            }
+
+            &__user-info {
+                padding: 20px;
+                padding-bottom: 5px;
+                background: linear-gradient(261.31deg, #1C1E1E 39.3%, #1E4558 108.39%),
+                    linear-gradient(0deg, rgba(29, 48, 57, 0.3), rgba(29, 48, 57, 0.3));
+                border-radius: 15px;
+                margin-bottom: 15px;
+
+                .title {
+                    font-size: 23px;
+                    font-weight: 500;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .ref-link {
+            background: linear-gradient(261.31deg, #1C1E1E 39.3%, #1E4558 108.39%),
+                linear-gradient(0deg, rgba(29, 48, 57, 0.3), rgba(29, 48, 57, 0.3));
+            border-radius: 15px;
+            padding: 20px;
+            font-size: 20px;
+            align-items: baseline;
+            font-weight: 500;
+            margin-bottom: 15px;
+            position: relative;
+            display: flex;
+
+            .link {
+                margin-left: 10px;
+                font-size: 15px;
+                color: #80D4FF;
+            }
+
+            .ref-link-item {
+                display: flex;
+                align-items: center;
+                top: 10px;
+                right: 10px;
+                position: absolute;
+            }
+
+        }
     }
-
-    .ref-link {
-      display: flex;
-      align-items: baseline;
-      position: relative;
-      margin-bottom: 15px;
-      padding: 20px;
-      border-radius: 15px;
-      background: linear-gradient(261.31deg, #1c1e1e 39.3%, #1e4558 108.39%),
-        linear-gradient(0deg, rgba(29, 48, 57, 0.3), rgba(29, 48, 57, 0.3));
-      font-size: 20px;
-      font-weight: 500;
-
-      .link {
-        margin-left: 10px;
-        color: #80d4ff;
-        font-size: 15px;
-      }
-
-      .ref-link-item {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        display: flex;
-        align-items: center;
-      }
-    }
-  }
 }
