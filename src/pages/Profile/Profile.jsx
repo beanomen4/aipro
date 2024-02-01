@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import "./Profile.scss";
-import { Button, ConfigProvider, message, theme } from "antd";
-import iconPencil from './../../assets/pencil.svg'
+import { useState } from "react";
+import { Button, ConfigProvider, Image, message, theme } from "antd";
 import { CopyOutlined, InfoCircleOutlined } from "@ant-design/icons";
-import ButtonForIcon from "../../ui/ButtonForIcon";
+
 import { useUser } from "../../features/authentication/useUser";
+import ButtonForIcon from "../../ui/ButtonForIcon";
+
+import "./Profile.scss";
 function Profile() {
   const [activeButton, setActiveButton] = useState("personalBtn");
   const [messageShow, messageContext] = message.useMessage();
