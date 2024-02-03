@@ -1,24 +1,40 @@
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #282829;
+      border-radius: 9px;
+      background-clip: content-box;
+  }
 .wrapper {
+    overflow: hidden;
     margin: 0px 120px;
-    height: 100%;
-
     .profile {
         font-family: 'Montserrat', sans-serif;
         justify-content: center;
         display: flex;
         flex-direction: column;
+        margin-top: 100px;
         position: relative;
-        margin-top: 30px;
         color: #fff;
-
         .user-photo {
             display: flex;
             position: relative;
             align-items: center;
             justify-content: center;
 
-            img {
+            span {
+                width: 170px;
+                height: 170px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 border-radius: 100%;
+                svg {
+                    width: 50%;
+                    height: 100%;
+                }
             }
 
             .send-photo {
@@ -85,6 +101,7 @@
                 flex-direction: column;
                 position: relative;
                 z-index: 1;
+                transition: .5s;
                 width: 100%;
                 cursor: pointer;
                 clip-path: polygon(0% 14.933%, 0.049% 4.134%, 0.049% 4.134%, 0.069% 3.461%, 0.122% 2.824%, 0.205% 2.23%, 0.315% 1.688%, 0.449% 1.207%, 0.605% 0.795%, 0.781% 0.46%, 0.972% 0.21%, 1.177% 0.054%, 1.393% 0%, 31.831% 0%, 31.831% 0%, 32.05% 0.055%, 32.257% 0.214%, 32.45% 0.468%, 32.626% 0.809%, 32.783% 1.228%, 32.917% 1.717%, 33.026% 2.266%, 33.108% 2.868%, 33.159% 3.513%, 33.176% 4.193%, 33.176% 10.74%, 33.176% 10.74%, 33.194% 11.42%, 33.245% 12.065%, 33.327% 12.667%, 33.436% 13.216%, 33.57% 13.704%, 33.727% 14.124%, 33.903% 14.465%, 34.096% 14.719%, 34.303% 14.878%, 34.521% 14.933%, 68.303% 14.933%, 98.655% 14.933%, 98.655% 14.933%, 98.873% 14.987%, 99.08% 15.146%, 99.273% 15.401%, 99.449% 15.742%, 99.606% 16.161%, 99.741% 16.649%, 99.85% 17.199%, 99.931% 17.8%, 99.982% 18.445%, 100% 19.125%, 100% 95.807%, 100% 95.807%, 99.982% 96.487%, 99.931% 97.132%, 99.85% 97.734%, 99.741% 98.283%, 99.606% 98.772%, 99.449% 99.191%, 99.273% 99.532%, 99.08% 99.786%, 98.873% 99.945%, 98.655% 100%, 1.345% 100%, 1.345% 100%, 1.127% 99.945%, 0.92% 99.786%, 0.727% 99.532%, 0.551% 99.191%, 0.394% 98.772%, 0.26% 98.283%, 0.15% 97.734%, 0.069% 97.132%, 0.018% 96.487%, 0% 95.807%, 0% 14.933%);
@@ -300,6 +317,7 @@
 
             .active {
                 z-index: 2;
+                transition: .5s;
                 background-color: #181818;
             }
         }
@@ -403,6 +421,10 @@
         .profile {
             .user-photo {
                 width: 130px;
+                span {
+                    width: 130px;
+                    height: 130px;
+                }
             }
             .cards-wrap {
                .card {

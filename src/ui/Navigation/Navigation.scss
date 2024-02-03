@@ -1,11 +1,15 @@
 .nav {
+    top: 0;
     padding: 20px 85px;
     display: flex;
     font-family: 'Montserrat', sans-serif;
     color: #fff;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
-    background: #181818;
+    background: #1818189e;
     .logo {
         display: flex;
         align-items: center;
