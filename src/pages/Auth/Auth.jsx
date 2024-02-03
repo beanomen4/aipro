@@ -67,7 +67,7 @@ function Auth() {
           <div className="auth__toggle">
             <div className="auth__toggle-panel auth__toggle-left">
               <h1>Welcome, Friend!</h1>
-              <p>Enter your personal details to use all of site features</p>
+              <p>Enter your card details to use all of site features</p>
               <Button
                 ghost
                 type="default"
@@ -83,7 +83,7 @@ function Auth() {
 
             <div className="auth__toggle-panel auth__toggle-right">
               <h1>Welcome Back!</h1>
-              <p>Enter your personal details to use all of site features</p>
+              <p>Enter your card details to use all of site features</p>
               <Button
                 ghost
                 type="default"

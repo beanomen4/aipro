@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Profile.scss";
 import { Button, ConfigProvider, message, theme } from "antd";
 import iconPencil from "./../../assets/pencil.svg";
@@ -10,6 +10,15 @@ function Profile() {
   const [messageShow, messageContext] = message.useMessage();
   const { user } = useUser();
   const { picture, name, email } = user.user_metadata;
+  const [matches, setMatches] = useState(
+    window.matchMedia("(max-width: 1140px)").matches
+  );
+
+  useEffect(() => {
+    window
+      .matchMedia("(max-width: 1140px)")
+      .addEventListener("change", (e) => setMatches(e.matches));
+  }, []);
   return (
     <ConfigProvider
       theme={{
@@ -44,17 +53,28 @@ function Profile() {
               </div>
             </div>
           </div>
-            {activeButton === "personalBtn" && (
-              <div className="personal">
-                <div className="personal__head-name">Personal Area</div>
-                <div className="personal__info">
-                  <div className="personal__main-info">
-                  <div className="personal__user-info">
+          <div className="cards-wrap">
+            <div
+              className={
+                activeButton === "personalBtn" ? "card active" : "card"
+              }
+              id="personal"
+            >
+              <div
+                className="card__head-name"
+                id="personalBtn"
+                onClick={(e) => setActiveButton(e.target.id)}
+              >
+                Personal Area
+              </div>
+              <div className="card__info">
+                <div className="card__main-info">
+                  <div className="card__user-info">
                     <div className="title">Рersonal information</div>
-                    <div id="name" className="personal__text">
+                    <div id="name" className="card__text">
                       Name: {name || "Mari_Petrovna"}
                     </div>
-                    <div id="email" className="personal__text">
+                    <div id="email" className="card__text">
                       Email: {email || "MariPetrovna@gmail.com"}
                     </div>
                     <ButtonForIcon
@@ -76,7 +96,7 @@ function Profile() {
                     <div className="ref-link-item">
                       <CopyOutlined
                         style={{
-                          fontSize: '15px'
+                          fontSize: "15px",
                         }}
                         onClick={() => {
                           navigator.clipboard.writeText(
@@ -87,71 +107,139 @@ function Profile() {
                       />
                       <ButtonForIcon
                         icon={
-                          <InfoCircleOutlined style={{ color: "#24A1E0", fontSize: '15px' }} />
+                          <InfoCircleOutlined
+                            style={{ color: "#24A1E0", fontSize: "15px" }}
+                          />
                         }
                       />
                     </div>
                   </div>
-                  <Button type="primary" style={{ textAlign: "left", height: '60px', borderRadius: '20px', fontSize: '20px'}} block>
+                  <Button
+                    type="primary"
+                    className="btn-check"
+                    block
+                  >
                     My applications
                   </Button>
+                </div>
+                <div className="card__pay">
+                  <div className="title">
+                    Payments
+                    <div className="card__balance">Balance: {"0"} AIC</div>
                   </div>
-                  <div className="personal__pay">
-                    <div className="title">
-                      Payments
-                      <div className="personal__balance">Balance: {"0"} AIC</div>
-                    </div>
 
-                    <ul className="personal__history">
-                      <li>
-                        Income: + 431,46 AIC{" "}
-                        <div className="history-date">02 / 12 / 24</div>
-                      </li>
-                      <li>
-                        Withdrawal: — 300 AIC{" "}
-                        <div className="history-date">07 / 12 / 24</div>
-                      </li>
-                      <li>
-                        Income: + 760,83 AIC{" "}
-                        <div className="history-date">15 / 12 / 24</div>
-                      </li>
-                      <Button type="primary" block>
+                  <ul className="card__history">
+                    <li>
+                      Income: + 431,46 AIC
+                      <div className="history-date">02 / 12 / 24</div>
+                    </li>
+                    <li>
+                      Withdrawal: — 300 AIC
+                      <div className="history-date">07 / 12 / 24</div>
+                    </li>
+                    <li>
+                      Income: + 760,83 AIC
+                      <div className="history-date">15 / 12 / 24</div>
+                    </li>
+                    <Button type="primary" block>
                       Pay out
                     </Button>
-                    </ul>
-                  </div>
+                  </ul>
                 </div>
+                {matches && (
+                   <Button
+                   type="primary"
+                   className="btn-check"
+                   style={{display: "block"}}
+                   block
+                 >
+                   My applications
+                 </Button>
+                ) }
               </div>
-            )}
-            {activeButton === "referralBtn" && (
-              <div className="referral">
-                <div className="referral__head-name">Personal Area</div>
-                <div className="referral__info">
-                  <div className="ref-link">
-                    Referral link: {user || "http://fgfyjbkjguyfif66//hxb"}
+            </div>
+
+            <div
+              className={
+                activeButton === "referralBtn" ? "card active" : "card"
+              }
+              id="referral"
+            >
+              <div
+                className="card__head-name"
+                id="referralBtn"
+                onClick={(e) => setActiveButton(e.target.id)}
+              >
+                Referral system
+              </div>
+              <div className="card__info">
+                <div className="card__main-info">
+                  <div className="card__total-earnings">
+                    Total earnings: <span>{"100"} AiCoin</span>
                     <ButtonForIcon
-                      icon={<InfoCircleOutlined style={{ color: "#24A1E0" }} />}
-                    />
-                    <ConfigProvider
-                      theme={{
-                        algorithm: theme.darkAlgorithm,
-                      }}
-                    >
-                      {messageContext}
-                    </ConfigProvider>
-                    <CopyOutlined
-                      onClick={() => {
-                        navigator.clipboard.writeText(
-                          user || "http://fgfyjbkjguyfif66//hxb"
-                        );
-                        infoMessage("Copy link!");
-                      }}
+                      icon={
+                        <InfoCircleOutlined
+                          style={{ color: "#24A1E0", fontSize: "15px" }}
+                        />
+                      }
                     />
                   </div>
+                  <div className="ref-link">
+                    Referral link:
+                    <div className="link">{"http://fgfyjbkjguyfif66//hxb"}</div>
+                    <div className="ref-link-item">
+                      <CopyOutlined
+                        style={{
+                          fontSize: "15px",
+                        }}
+                        onClick={() => {
+                          navigator.clipboard.writeText(
+                            user || "http://fgfyjbkjguyfif66//hxb"
+                          );
+                          infoMessage("Copy link!");
+                        }}
+                      />
+                      <ButtonForIcon
+                        icon={
+                          <InfoCircleOutlined
+                            style={{ color: "#24A1E0", fontSize: "15px" }}
+                          />
+                        }
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="referral__table"></div>
+                      <div className="card__table-wrap">
+                      <table className="card__table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Referral ID</th>
+                      <th scope="col">Amount of earnings</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+                      </div>
               </div>
-            )}
+            </div>
+          </div>
         </div>
       </div>
     </ConfigProvider>
