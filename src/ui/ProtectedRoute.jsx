@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Spin } from "antd";
-
+import spinLogo from './../assets/spinLogo.svg'
 import { useUser } from "../features/authentication/useUser";
 
 function ProtectedRoute({ children }) {
@@ -22,7 +21,7 @@ function ProtectedRoute({ children }) {
           placeItems: "center",
         }}
       >
-        <Spin />
+       <img src={spinLogo} className="loader-spin" width={'150'} />
       </div>
     );
 

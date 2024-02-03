@@ -7,7 +7,6 @@ import logo from "./../../assets/logo-icon.svg";
 import "./Navigation.scss";
 import { useEffect, useState } from "react";
 import SubMenu from "antd/es/menu/SubMenu";
-import ButtonForIcon from "../ButtonForIcon";
 function Navigation() {
   const { logout } = useLogout();
   const { user } = useUser();
@@ -15,7 +14,7 @@ function Navigation() {
   const [matches, setMatches] = useState(
     window.matchMedia("(max-width: 640px)").matches
   );
-
+const [checkOpenDropmenuNavigation,setCheckOpenDropmenuNavigation] = useState(false)
   useEffect(() => {
     window
       .matchMedia("(max-width: 640px)")
@@ -43,9 +42,9 @@ function Navigation() {
           <Menu.Item key="4">My applications</Menu.Item>
         </>
       ) : (
-        <SubMenu key="subMenu" title="Application">
-          <Menu.Item key="0">All applications</Menu.Item>
-          <Menu.Item key="1">My applications</Menu.Item>
+        <SubMenu key="3" title="Application">
+          <Menu.Item key="3-3">All applications</Menu.Item>
+          <Menu.Item key="3-4">My applications</Menu.Item>
         </SubMenu>
       )}
       <Menu.Item onClick={logout} key="5">
@@ -53,6 +52,11 @@ function Navigation() {
       </Menu.Item>
     </Menu>
   );
+ if(checkOpenDropmenuNavigation) {
+  document.body.style.overflow = 'hidden';
+ } else {
+  document.body.style.overflow = 'auto';
+ }
   return (
     <ConfigProvider
       theme={{
@@ -81,6 +85,7 @@ function Navigation() {
           <Dropdown
             overlayClassName="dropdown-menu"
             overlay={menu}
+            onOpenChange={(e) => matches && setCheckOpenDropmenuNavigation(e)}
             placement={matches ? "bottom" : "bottomRight"}
             trigger={["click"]}
           >
@@ -90,13 +95,11 @@ function Navigation() {
                 <div className="burger-item"></div>
                 <div className="burger-item"></div>
               </div>
-            ) : (
-              <Avatar
-                className="avatar"
-                size="large"
-                src={picture || <UserOutlined />}
-              />
-            )}
+            ) :  (picture ? (
+              <Avatar className="avatar" src={picture}/>
+            ): (
+              <Avatar className="avatar" icon={<UserOutlined/>}/>
+            ))}
           </Dropdown>
         </div>
       </nav>
