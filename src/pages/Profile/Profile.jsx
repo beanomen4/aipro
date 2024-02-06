@@ -5,11 +5,15 @@ import iconPencil from "./../../assets/pencil.svg";
 import {InfoCircleOutlined, UserOutlined } from "@ant-design/icons";
 import ButtonForIcon from "../../ui/ButtonForIcon";
 import { useUser } from "../../features/authentication/useUser";
+import { useAuthClient } from "../../features/authentication/useAuthClient";
 import ProfileCard from "./ProfileCard";
+
 function Profile() {
   const [messageShow, messageContext] = message.useMessage();
   const { user } = useUser();
   const { picture, name } = user.user_metadata;
+  var { id, aicoin } = useAuthClient(user);
+  console.log(aicoin);
   return (
     <ConfigProvider
       theme={{
@@ -41,7 +45,7 @@ function Profile() {
               </div>
               <div className="user-info__name">{name || "Masha Petrenko"}</div>
               <div className="user-info__balance">
-                Вalance: {"0"} AiCoin
+                Вalance: {aicoin} AiCoin
                 <ButtonForIcon
                   icon={<InfoCircleOutlined style={{ color: "#24A1E0" }} />}
                 />
