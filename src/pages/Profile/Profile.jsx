@@ -1,18 +1,20 @@
 import React from "react";
 import "./Profile.scss";
-import {  Avatar, ConfigProvider, message, theme } from "antd";
+import { Avatar, ConfigProvider, message, theme } from "antd";
 import iconPencil from "./../../assets/pencil.svg";
-import {InfoCircleOutlined, UserOutlined } from "@ant-design/icons";
+import { InfoCircleOutlined, UserOutlined } from "@ant-design/icons";
 import ButtonForIcon from "../../ui/ButtonForIcon";
 import { useUser } from "../../features/authentication/useUser";
 import { useAuthClient } from "../../features/authentication/useAuthClient";
 import ProfileCard from "./ProfileCard";
 
+import { getClientData } from "../../services/apiAuthClient";
+
 function Profile() {
   const [messageShow, messageContext] = message.useMessage();
   const { user } = useUser();
   const { picture, name } = user.user_metadata;
-  const { id, aicoin } = useAuthClient(user.id);
+  const { data: client } = useAuthClient(user.id);
   return (
     <ConfigProvider
       theme={{
@@ -25,11 +27,11 @@ function Profile() {
           <div className="profile__head">
             <div className="user-info">
               <div className="user-photo">
-                    {picture ? (
-                      <Avatar src={picture}/>
-                    ): (
-                      <Avatar icon={<UserOutlined/>}/>
-                    )}
+                {picture ? (
+                  <Avatar src={picture} />
+                ) : (
+                  <Avatar icon={<UserOutlined />} />
+                )}
                 <div className="send-photo">
                   <input
                     type="file"
@@ -44,14 +46,14 @@ function Profile() {
               </div>
               <div className="user-info__name">{name || "Masha Petrenko"}</div>
               <div className="user-info__balance">
-                Вalance: {aicoin || "🚀"} AiCoin
+                Вalance: {client?.aicoin} AiCoin
                 <ButtonForIcon
                   icon={<InfoCircleOutlined style={{ color: "#24A1E0" }} />}
                 />
               </div>
             </div>
           </div>
-          <ProfileCard/>
+          <ProfileCard />
         </div>
       </div>
     </ConfigProvider>
