@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useUser } from '../../features/authentication/useUser';
+import { useAuthClient } from "../../features/authentication/useAuthClient";
 import ButtonForIcon from "../../ui/ButtonForIcon";
 import {InfoCircleOutlined, CopyOutlined } from "@ant-design/icons";
 import { Button } from 'antd';
+import ProfilePaymentsHistory from "./ProfilePaymentsHistory";
 
 function ProfileCard() {
     const [activeButton, setActiveButton] = useState("personalBtn");
     const { user } = useUser();
     const { name, email } = user.user_metadata;
+    const { id, aicoin } = useAuthClient(user.id);
     const [matches, setMatches] = useState(
     window.matchMedia("(max-width: 1140px)").matches
   );
@@ -58,7 +61,7 @@ function ProfileCard() {
                   </div>
                   <div className="ref-link">
                     Referral link:
-                    <div className="link">{"http://fgfyjbkjguyfif66//hxb"}</div>
+                    <div className="link">{user.id}</div>
                     <div className="ref-link-item">
                       <CopyOutlined
                         style={{
@@ -66,7 +69,7 @@ function ProfileCard() {
                         }}
                         onClick={() => {
                           navigator.clipboard.writeText(
-                            user || "http://fgfyjbkjguyfif66//hxb"
+                            user.id || "00000000-0000-0000-0000-000000000000"
                           );
                           infoMessage("Copy link!");
                         }}
@@ -91,22 +94,11 @@ function ProfileCard() {
                 <div className="card__pay">
                   <div className="title">
                     Payments
-                    <div className="card__balance">Balance: {"0"} AIC</div>
+                    <div className="card__balance">Balance: {aicoin || "🚀"} AIC</div>
                   </div>
 
                   <ul className="card__history">
-                    <li>
-                      Income: + 431,46 AIC
-                      <div className="history-date">02 / 12 / 24</div>
-                    </li>
-                    <li>
-                      Withdrawal: — 300 AIC
-                      <div className="history-date">07 / 12 / 24</div>
-                    </li>
-                    <li>
-                      Income: + 760,83 AIC
-                      <div className="history-date">15 / 12 / 24</div>
-                    </li>
+                    {/*<ProfilePaymentsHistory/>*/}
                     <Button type="primary" block>
                       Pay out
                     </Button>
@@ -141,7 +133,7 @@ function ProfileCard() {
               <div className="card__info">
                 <div className="card__main-info">
                   <div className="card__total-earnings">
-                    Total earnings: <span>{"100"} AiCoin</span>
+                    Total earnings: <span>{aicoin || "🚀"} AiCoin</span>
                     <ButtonForIcon
                       icon={
                         <InfoCircleOutlined
@@ -152,7 +144,7 @@ function ProfileCard() {
                   </div>
                   <div className="ref-link">
                     Referral link:
-                    <div className="link">{"http://fgfyjbkjguyfif66//hxb"}</div>
+                    <div className="link">{user.id || "00000000-0000-0000-0000-000000000000"}</div>
                     <div className="ref-link-item">
                       <CopyOutlined
                         style={{
@@ -160,7 +152,7 @@ function ProfileCard() {
                         }}
                         onClick={() => {
                           navigator.clipboard.writeText(
-                            user || "http://fgfyjbkjguyfif66//hxb"
+                            user.id || "http://fgfyjbkjguyfif66//00000000-0000-0000-0000-000000000000"
                           );
                           infoMessage("Copy link!");
                         }}

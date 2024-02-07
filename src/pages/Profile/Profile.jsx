@@ -12,8 +12,7 @@ function Profile() {
   const [messageShow, messageContext] = message.useMessage();
   const { user } = useUser();
   const { picture, name } = user.user_metadata;
-  var { id, aicoin } = useAuthClient(user);
-  console.log(aicoin);
+  const { id, aicoin } = useAuthClient(user.id);
   return (
     <ConfigProvider
       theme={{
@@ -45,7 +44,7 @@ function Profile() {
               </div>
               <div className="user-info__name">{name || "Masha Petrenko"}</div>
               <div className="user-info__balance">
-                Вalance: {aicoin} AiCoin
+                Вalance: {aicoin || "🚀"} AiCoin
                 <ButtonForIcon
                   icon={<InfoCircleOutlined style={{ color: "#24A1E0" }} />}
                 />

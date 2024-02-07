@@ -2,10 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 
 import { getClientData } from "../../services/apiAuthClient";
 
-export function useAuthClient(user) {
+export function useAuthClient(userId) {
   const { data: AuthClient, isLoading } = useQuery({
     queryKey: ["clientData"],
-    queryFn: () => getClientData(user.id),
+    queryFn: () => getClientData(userId),
   });  
-  return { AuthClient, isLoading, isAuthenticated: user?.role === "authenticated" };
+  return { AuthClient, isLoading};
 }
